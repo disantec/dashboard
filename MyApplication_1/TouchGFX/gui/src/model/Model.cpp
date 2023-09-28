@@ -1,25 +1,27 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
-// extern "C"
-// {
-//     extern osMessageQueueId_t adcQueueHandle;
 
-// }
-// #endif
+#ifndef SIMULATOR
+#include "main.h"
 
-Model::Model() : modelListener(0)
+extern "C"
+{
+
+}
+#endif
+
+Model::Model() : modelListener(0), ADC_VAL(50)
 {
 
 }
 
 void Model::tick()
 {
-// #ifndef SIMULATOR
-// 	//Get Data from ADC Queue
-// 	if (osMessageQueueGet(adcQueueHandle, &ADC_value, 0U, 0) == osOK)
-// 	{
-// 		modelListener->setADC(ADC_value);  // send data to presenter
-// 	}
-// #endif
+#ifndef SIMULATOR
 
+	ADC_VAL = 50;
+
+#endif
+
+	modelListener->setADC (ADC_VAL);
 }

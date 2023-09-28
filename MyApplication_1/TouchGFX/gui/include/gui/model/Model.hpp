@@ -16,9 +16,7 @@ public:
     void tick();
 protected:
     ModelListener* modelListener;
-    // int textProgress1;
-    // uint16_t ADC_value;
+    int ADC_VAL;
 };
 
 #endif // MODEL_HPP
-

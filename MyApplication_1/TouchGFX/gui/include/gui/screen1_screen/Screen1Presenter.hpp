@@ -13,8 +13,6 @@ class Screen1Presenter : public touchgfx::Presenter, public ModelListener
 public:
     Screen1Presenter(Screen1View& v);
 
-    void setValue(int value);
-
     /**
      * The activate function is called automatically when this screen is "switched in"
      * (ie. made active). Initialization logic can be placed here.
@@ -27,7 +25,9 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Screen1Presenter() {}
+    virtual ~Screen1Presenter() {};
+
+    virtual void setADC (int val);
 
 private:
     Screen1Presenter();
@@ -36,5 +36,3 @@ private:
 };
 
 #endif // SCREEN1PRESENTER_HPP
-
-

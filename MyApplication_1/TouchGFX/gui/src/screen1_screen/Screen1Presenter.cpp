@@ -12,12 +12,12 @@ void Screen1Presenter::activate()
 
 }
 
-void Screen1Presenter::setValue(int val)
-{
-	view.updateValue(val);
-}
-
 void Screen1Presenter::deactivate()
 {
 
+}
+
+void Screen1Presenter::setADC (int val)
+{
+	view.setADC (val);
 }

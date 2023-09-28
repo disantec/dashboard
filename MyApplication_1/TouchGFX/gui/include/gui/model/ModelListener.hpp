@@ -14,6 +14,8 @@ public:
     {
         model = m;
     }
+
+    virtual void setADC (int val) {};
 protected:
     Model* model;
 };
