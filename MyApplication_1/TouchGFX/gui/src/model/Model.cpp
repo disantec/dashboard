@@ -10,18 +10,15 @@ extern "C"
 }
 #endif
 
-Model::Model() : modelListener(0), ADC_VAL(50)
+Model::Model() : modelListener(0), RPM_VAL(50)
 {
 
 }
 
 void Model::tick()
 {
-#ifndef SIMULATOR
 
-	ADC_VAL = 50;
 
-#endif
-
-	modelListener->setADC (ADC_VAL);
+    RPM_VAL = 69;
+    modelListener->setADC (RPM_VAL);
 }

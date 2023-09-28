@@ -16,59 +16,23 @@
             }
           },
           {
-            "Type": "TextProgress",
-            "Name": "textProgress1",
-            "X": 313,
-            "Y": 215,
-            "Width": 175,
-            "Height": 50,
-            "TextId": "__SingleUse_UWX0",
-            "Color": {
-              "Red": 12,
-              "Green": 27,
-              "Blue": 55
-            },
-            "Preset": "alternate_theme\\presets\\textprogress\\rounded.json",
-            "FileNameBackground": "__generated\\alternate_theme_images_widgets_textprogress_backgrounds_rounded_light.png",
-            "IndicatorPositionX": 12,
-            "IndicatorPositionY": 10,
-            "IndicatorPositionWidth": 150,
-            "IndicatorPositionHeight": 30,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 60
-          },
-          {
             "Type": "TextArea",
             "Name": "textArea",
-            "X": 387,
-            "Y": 328,
-            "Width": 26,
+            "X": 381,
+            "Y": 230,
+            "Width": 39,
             "Height": 20,
-            "TextId": "__SingleUse_QMXE",
+            "TextId": "textArea",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_ZEOI",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 4
             }
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 1
-            },
-            "Action": {
-              "Type": "ActionSetWildcard",
-              "TextId": "__SingleUse_SV6D",
-              "WildcardLocation": "Wildcard1",
-              "ActionComponent": "textArea"
-            }
-          }
-        ]
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [],

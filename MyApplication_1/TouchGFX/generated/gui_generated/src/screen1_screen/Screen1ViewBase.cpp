@@ -3,7 +3,6 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
 Screen1ViewBase::Screen1ViewBase()
@@ -16,22 +15,13 @@ Screen1ViewBase::Screen1ViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     add(box1);
 
-    textProgress1.setXY(313, 215);
-    textProgress1.setProgressIndicatorPosition(12, 10, 150, 30);
-    textProgress1.setRange(0, 100);
-    textProgress1.setColor(touchgfx::Color::getColorFromRGB(12, 27, 55));
-    textProgress1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UWX0));
-    textProgress1.setBackground(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TEXTPROGRESS_BACKGROUNDS_ROUNDED_LIGHT_ID));
-    textProgress1.setValue(60);
-    add(textProgress1);
-
-    textArea.setXY(387, 328);
+    textArea.setXY(381, 230);
     textArea.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea.setLinespacing(0);
     Unicode::snprintf(textAreaBuffer, TEXTAREA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZEOI).getText());
     textArea.setWildcard(textAreaBuffer);
     textArea.resizeToCurrentText();
-    textArea.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QMXE));
+    textArea.setTypedText(touchgfx::TypedText(T_TEXTAREA));
     add(textArea);
 }
 
@@ -43,16 +33,4 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
 
-}
-
-void Screen1ViewBase::handleTickEvent()
-{
-    //Interaction1
-    //When every N tick set wildcard textArea
-    //Set textArea wildcard to __SingleUse_SV6D
-    Unicode::snprintf(textAreaBuffer, TEXTAREA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SV6D).getText());
-    textArea.setWildcard(textAreaBuffer);
-    textArea.invalidate();
-    textArea.resizeToCurrentText();
-    textArea.invalidate();
 }

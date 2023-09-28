@@ -8,7 +8,6 @@
 #include <mvp/View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/containers/progress_indicators/TextProgress.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
@@ -17,7 +16,6 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase();
     virtual void setupScreen();
-    virtual void handleTickEvent();
 
 protected:
     FrontendApplication& application() {
@@ -29,13 +27,12 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box box1;
-    touchgfx::TextProgress textProgress1;
     touchgfx::TextAreaWithOneWildcard textArea;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTAREA_SIZE = 10;
+    static const uint16_t TEXTAREA_SIZE = 4;
     touchgfx::Unicode::UnicodeChar textAreaBuffer[TEXTAREA_SIZE];
 
 private:

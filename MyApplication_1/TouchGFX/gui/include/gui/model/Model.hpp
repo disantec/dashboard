@@ -16,7 +16,7 @@ public:
     void tick();
 protected:
     ModelListener* modelListener;
-    int ADC_VAL;
+    int RPM_VAL;
 };
 
 #endif // MODEL_HPP
