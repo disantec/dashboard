@@ -15,7 +15,7 @@ public:
         model = m;
     }
 
-    virtual void setADC (int val) {};
+    virtual void setRPM (int val) {};
 protected:
     Model* model;
 };

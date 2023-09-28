@@ -20,5 +20,5 @@ void Model::tick()
 
 
     RPM_VAL = 69;
-    modelListener->setADC (RPM_VAL);
+    modelListener->setRPM (RPM_VAL);
 }

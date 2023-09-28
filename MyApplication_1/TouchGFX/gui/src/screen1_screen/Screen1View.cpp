@@ -15,7 +15,7 @@ void Screen1View::tearDownScreen()
     Screen1ViewBase::tearDownScreen();
 }
 
-void Screen1View::setADC (int val)
+void Screen1View::setRPM (int val)
 {
 	Unicode::snprintf(textAreaBuffer, TEXTAREA_SIZE, "%d", val);
 	textArea.invalidate();

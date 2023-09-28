@@ -17,7 +17,7 @@ void Screen1Presenter::deactivate()
 
 }
 
-void Screen1Presenter::setADC (int val)
+void Screen1Presenter::setRPM (int val)
 {
-	view.setADC (val);
+	view.setRPM (val);
 }
