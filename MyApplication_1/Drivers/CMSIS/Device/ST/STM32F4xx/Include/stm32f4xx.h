@@ -29,7 +29,7 @@
 /** @addtogroup CMSIS
   * @{
   */
-
+ 
 /** @addtogroup stm32f4xx
   * @{
   */

@@ -27,6 +27,7 @@
 #include "../Components/nt35510/nt35510.h"
 #include "stm32469i_discovery_sdram.h"
 #include "stm32469i_discovery_qspi.h"
+#include "Globals.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,6 +70,15 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+
+/* Definitions for CAN_Task */
+osThreadId_t CAN_TaskHandle;
+const osThreadAttr_t CAN_Task_attributes = {
+  .name = "CAN_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+
 /* Definitions for TouchGFXTask */
 osThreadId_t TouchGFXTaskHandle;
 const osThreadAttr_t TouchGFXTask_attributes = {
@@ -77,6 +87,21 @@ const osThreadAttr_t TouchGFXTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+
+// FMC_SDRAM_CommandTypeDef command;
+
+Statuses Current_Status;
+
+CAN_TxHeaderTypeDef TxHeader;
+CAN_RxHeaderTypeDef RxHeader;
+uint8_t TxData[8];
+uint8_t RxData[8];
+uint32_t TxMailbox;
+
+FILE *File;
+
+FILE *FileBuffer;
+uint8_t BufferIsSet;
 
 /* USER CODE END PV */
 
@@ -92,6 +117,7 @@ static void MX_LTDC_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
+void Start_CAN_Task(void *argument);
 extern void TouchGFX_Task(void *argument);
 
 /* USER CODE BEGIN PFP */
@@ -171,6 +197,9 @@ int main(void)
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
+   /* creation of CAN_Task */
+  CAN_TaskHandle = osThreadNew(Start_CAN_Task, NULL, &CAN_Task_attributes);
+ 
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
 
@@ -788,6 +817,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
   /* USER CODE END Callback 1 */
 }
+
+/* USER CODE END Header_Start_CAN_Task */
+void Start_CAN_Task(void *argument)
+{
+
+Current_Status.TPS=45;
+
+}
+
 
 /**
   * @brief  This function is executed in case of error occurrence.
