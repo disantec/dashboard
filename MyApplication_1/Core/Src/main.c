@@ -27,6 +27,7 @@
 #include "../Components/nt35510/nt35510.h"
 #include "stm32469i_discovery_sdram.h"
 #include "stm32469i_discovery_qspi.h"
+#include "data_store.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,6 +111,12 @@ extern void TouchGFX_Task(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
+    data_store *p_data_store = data_store::initialize();
+
+    // ... any other logic you might have ...
+
+    return 0;
 
   /* USER CODE END 1 */
 

@@ -18,7 +18,10 @@ Model::Model() : modelListener(0), RPM_VAL(50)
 void Model::tick()
 {
 
+    int rpm = data_store.get_rpm();
 
-    RPM_VAL = 69;
-    modelListener->setRPM (RPM_VAL);
+    return 0;
+
+    // RPM_VAL = 69;
+    modelListener->setRPM (rpm);
 }
