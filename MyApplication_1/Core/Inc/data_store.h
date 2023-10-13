@@ -10,11 +10,11 @@ public:
 
     static data_store *instance()
     {
-            // if (nullptr == p_instance_) { p_instance_ = new data_store(); }
+            if (nullptr == p_instance_) { p_instance_ = new data_store(); }
 
-            return new data_store();
+            // return new data_store();
 
-            // return p_instance_;
+            return p_instance_;
     }
 
 
@@ -23,12 +23,14 @@ public:
 
     void set_tps(double tps) { tps_ = tps; }
     double get_tps() { return tps_; }
+    
+    static data_store *p_instance_;
 
 
 private:
     data_store() {}
 
-    static data_store *p_instance_;
+    // static data_store *p_instance_;
     
     // maybe make rpm_ an int
     double rpm_ = 12345.0;
