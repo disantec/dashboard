@@ -114,7 +114,7 @@ int main(void)
 
     // ... any other logic you might have ...
 
-    return 0;
+    // return 0;
 
   /* USER CODE END 1 */
 
@@ -767,11 +767,12 @@ void StartDefaultTask(void *argument)
   /* USER CODE BEGIN 5 */
 
   application_main(argument);
+  printf("madeitpastappmain\n");
 
   /* Infinite loop */
   for(;;)
   {
-    osDelay(100);
+    osDelay(1);
   }
   /* USER CODE END 5 */
 }

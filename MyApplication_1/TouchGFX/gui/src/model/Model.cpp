@@ -21,6 +21,7 @@ void Model::tick()
 {
     
     RPM_VAL = data_store::instance()->get_rpm();
+    // RPM_VAL=69;
 
     modelListener->setRPM (RPM_VAL);
 }
