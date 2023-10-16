@@ -21,7 +21,7 @@ $(error Spaces not allowed in path)
 else
 
 ADDITIONAL_SOURCES := 
-ADDITIONAL_INCLUDE_PATHS := "C:\\Users\\Christian\\Downloads\\dashboard-main\\MyApplication_1\\Core\\Inc"
+ADDITIONAL_INCLUDE_PATHS := "C:\Users\Christian\Documents\git\dashboard\MyApplication_1\Core\Inc"
 ADDITIONAL_LIBRARY_PATHS := 
 ADDITIONAL_LIBRARIES :=
 export ADDITIONAL_SOURCES ADDITIONAL_INCLUDE_PATHS ADDITIONAL_LIBRARY_PATHS ADDITIONAL_LIBRARIES
