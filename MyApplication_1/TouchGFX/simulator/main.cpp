@@ -10,6 +10,8 @@
 
 using namespace touchgfx;
 
+data_store *data_store::p_instance_ = nullptr;
+
 #ifdef __linux__
 int main(int argc, char** argv)
 {

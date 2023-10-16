@@ -23,8 +23,6 @@ all clean assets:
 $(error Spaces not allowed in path)
 else
 
-$(info $(dashboard_path))
-
 ADDITIONAL_SOURCES :=
 ADDITIONAL_INCLUDE_PATHS := "$(dashboard_path)\Core\Inc"
 ADDITIONAL_LIBRARY_PATHS := 
