@@ -6,6 +6,7 @@
 #include <touchgfx/lcd/LCD.hpp>
 #include <stdlib.h>
 #include <simulator/mainBase.hpp>
+#include "data_store.h"
 
 using namespace touchgfx;
 
@@ -37,6 +38,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
     // touchgfx_printf() which will ensure there is a console to write
     // to.
     //touchgfx_enable_stdio();
+    data_store::instance()->set_rpm(666);
 
     touchgfx::HAL::getInstance()->taskEntry(); //Never returns
 
