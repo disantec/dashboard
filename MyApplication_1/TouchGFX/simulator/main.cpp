@@ -10,6 +10,8 @@
 
 using namespace touchgfx;
 
+// This line is required when running the simulator as the data_store.cpp will not
+// be compiled in. Without this, p_instance_ will remain undefined and compilation will not work.
 data_store *data_store::p_instance_ = nullptr;
 
 #ifdef __linux__
