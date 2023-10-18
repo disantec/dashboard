@@ -1,5 +1,7 @@
 // #include "data_store.h"
 #include "C:\Users\disan\Documents\GIT\Dashboard\dashboard\MyApplication_1\Core\Inc\data_store.h"
+#include "cmsis_os.h"
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,7 +9,23 @@ extern "C" {
 
 void application_main(void *arg)
 {
-    data_store::instance()->set_rpm(69420);
+    int rpm=1, rpmstore;
+    
+
+while (true) {
+    while (rpmstore<10) {
+        rpmstore=++rpm;
+
+        osDelay(500);
+
+        data_store::instance()->set_rpm(rpmstore);
+    }
+    
+    rpm = 1;
+    rpmstore = 1;
+    
+    data_store::instance()->set_rpm(rpmstore);
+}
 }
 
 #ifdef __cplusplus

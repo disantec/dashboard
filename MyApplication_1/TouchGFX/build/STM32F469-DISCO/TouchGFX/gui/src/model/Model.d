@@ -1,8 +1,7 @@
 TouchGFX/build/STM32F469-DISCO/TouchGFX/gui/src/model/Model.o: \
  TouchGFX/gui/src/model/Model.cpp \
  TouchGFX/gui/include/gui/model/Model.hpp \
- TouchGFX/gui/include/gui/model/ModelListener.hpp \
- C:\Users\disan\Documents\GIT\Dashboard\dashboard\MyApplication_1\Core\Inc\data_store.h \
+ TouchGFX/gui/include/gui/model/ModelListener.hpp Core/Inc/data_store.h \
  Core/Inc/main.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Core/Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -45,7 +44,7 @@ TouchGFX/gui/include/gui/model/Model.hpp:
 
 TouchGFX/gui/include/gui/model/ModelListener.hpp:
 
-C:\Users\disan\Documents\GIT\Dashboard\dashboard\MyApplication_1\Core\Inc\data_store.h:
+Core/Inc/data_store.h:
 
 Core/Inc/main.h:
 
