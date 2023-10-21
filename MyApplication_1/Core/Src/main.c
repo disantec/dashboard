@@ -95,6 +95,8 @@ static void MX_I2C1_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
+void application_main(void *arg);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
