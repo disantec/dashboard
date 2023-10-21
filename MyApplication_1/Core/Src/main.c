@@ -767,7 +767,6 @@ void StartDefaultTask(void *argument)
   /* USER CODE BEGIN 5 */
 
   application_main(argument);
-  printf("madeitpastappmain\n");
 
   /* Infinite loop */
   for(;;)

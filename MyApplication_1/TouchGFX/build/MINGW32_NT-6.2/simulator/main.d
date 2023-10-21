@@ -76,7 +76,8 @@ build/MINGW32_NT-6.2/simulator/main.o: simulator/main.cpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  generated/gui_generated/include/gui_generated/common/SimConstants.hpp \
  ../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/SDL2TouchController.hpp \
- generated/simulator/include/simulator/mainBase.hpp
+ generated/simulator/include/simulator/mainBase.hpp \
+ C:/Users/disan/Documents/GIT/Dashboard/dashboard/MyApplication_1\Core\Inc/data_store.h
 
 ../Middlewares/ST/touchgfx/framework/include/platform/hal/simulator/sdl2/HALSDL2.hpp:
 
@@ -233,3 +234,5 @@ generated/gui_generated/include/gui_generated/common/SimConstants.hpp:
 ../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/SDL2TouchController.hpp:
 
 generated/simulator/include/simulator/mainBase.hpp:
+
+C:/Users/disan/Documents/GIT/Dashboard/dashboard/MyApplication_1\Core\Inc/data_store.h:

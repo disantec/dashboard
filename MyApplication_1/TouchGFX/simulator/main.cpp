@@ -6,8 +6,13 @@
 #include <touchgfx/lcd/LCD.hpp>
 #include <stdlib.h>
 #include <simulator/mainBase.hpp>
+#include "data_store.h"
 
 using namespace touchgfx;
+
+// This line is required when running the simulator as the data_store.cpp will not
+// be compiled in. Without this, p_instance_ will remain undefined and compilation will not work.
+data_store *data_store::p_instance_ = nullptr;
 
 #ifdef __linux__
 int main(int argc, char** argv)
@@ -37,6 +42,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
     // touchgfx_printf() which will ensure there is a console to write
     // to.
     //touchgfx_enable_stdio();
+    data_store::instance()->set_rpm(666);
 
     touchgfx::HAL::getInstance()->taskEntry(); //Never returns
 

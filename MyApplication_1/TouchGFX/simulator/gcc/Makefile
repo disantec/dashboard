@@ -13,6 +13,9 @@ makefile_path := $(call qs,$(dir $(call sq,$(abspath $(call sq,$(makefile_name))
 # Get path where the Application is
 application_path := $(call qs,$(abspath $(call sq,$(makefile_path)../..)))
 
+# Get the main dashboard application path.
+dashboard_path := $(call qs,$(abspath $(call sq,$(application_path)../..)))
+
 .PHONY: clean assets all
 
 ifneq ($(words $(makefile_path))$(words $(MAKEFILE_LIST)),11)
@@ -20,8 +23,8 @@ all clean assets:
 $(error Spaces not allowed in path)
 else
 
-ADDITIONAL_SOURCES := 
-ADDITIONAL_INCLUDE_PATHS := 
+ADDITIONAL_SOURCES :=
+ADDITIONAL_INCLUDE_PATHS := "$(dashboard_path)\Core\Inc"
 ADDITIONAL_LIBRARY_PATHS := 
 ADDITIONAL_LIBRARIES :=
 export ADDITIONAL_SOURCES ADDITIONAL_INCLUDE_PATHS ADDITIONAL_LIBRARY_PATHS ADDITIONAL_LIBRARIES
