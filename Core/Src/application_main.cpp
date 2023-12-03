@@ -49,7 +49,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
             data_store::instance()->set_rpm(rpm);
             
-            HAL_Delay(100);
+            HAL_Delay(500);
         }
     }
 }
