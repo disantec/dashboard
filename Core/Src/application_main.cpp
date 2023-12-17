@@ -10,7 +10,7 @@ extern "C" {
 
 void application_main(void *arg, CAN_HandleTypeDef *hcan)
 {
-    int rpm=1, rpmstore;
+    int rpm=0;
 
     CAN_RxHeaderTypeDef RxHeader;
     uint8_t RxData[8];
@@ -34,7 +34,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
                 rpm = 222;
             }*/
 
-            rpm = HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) + HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO1);
+            rpm += HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) + HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO1);
 
             data_store::instance()->set_rpm(rpm);
             
