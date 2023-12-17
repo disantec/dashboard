@@ -24,20 +24,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
     {
         while (true) 
         {
-            
-            /*while (rpmstore<10) {
-                rpmstore=++rpm;
-
-                osDelay(500);
-
-                //data_store::instance()->set_rpm(rpmstore);
-            }
-            
-            rpm = 1;
-            rpmstore = 1;
-            
-            //data_store::instance()->set_rpm(rpmstore);*/
-
+            /*
             if (HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData))
             {
                 rpm = 111;
@@ -45,7 +32,9 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
             else
             {
                 rpm = 222;
-            }
+            }*/
+
+            rpm = HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) + HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO1);
 
             data_store::instance()->set_rpm(rpm);
             
