@@ -51,6 +51,7 @@ typedef enum
   HAL_CAN_STATE_SLEEP_PENDING     = 0x03U,  /*!< CAN sleep request is pending        */
   HAL_CAN_STATE_SLEEP_ACTIVE      = 0x04U,  /*!< CAN sleep mode is active            */
   HAL_CAN_STATE_ERROR             = 0x05U   /*!< CAN error state                     */
+
 } HAL_CAN_StateTypeDef;
 
 /**
