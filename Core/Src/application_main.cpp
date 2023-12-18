@@ -10,56 +10,47 @@ extern "C" {
 
 void application_main(void *arg, CAN_HandleTypeDef *hcan)
 {
-    int rpm=0;
+    CAN_TxHeaderTypeDef   TxHeader;
+    CAN_RxHeaderTypeDef   RxHeader;
+    uint8_t               TxData[8];
+    uint8_t               RxData[8];
+    uint32_t              TxMailbox;
 
-    CAN_RxHeaderTypeDef RxHeader;
-    uint8_t RxData[8];
+    uint32_t count = 0;
 
-    CAN_TxHeaderTypeDef TxHeader;
-    TxHeader.IDE = CAN_ID_STD;
-    TxHeader.StdId = 0x446;
-    TxHeader.RTR = CAN_RTR_DATA;
-    TxHeader.DLC = 2;
-
-    uint8_t TxData[8];
-    TxData[0] = 50;  
-    TxData[1] = 0xAA;
-
-    uint32_t TxMailbox;
-
-    
-    if(HAL_OK != HAL_CAN_Start(hcan))
+    while (true) 
     {
-        data_store::instance()->set_rpm(666);
-    }
-    else
-    {
-        while (true) 
+        TxHeader.StdId = 0x11;
+        TxHeader.RTR = CAN_RTR_DATA;
+        TxHeader.IDE = CAN_ID_STD;
+        TxHeader.DLC = 2;
+        TxHeader.TransmitGlobalTime = DISABLE;
+        TxData[0] = 0xCA;
+        TxData[1] = 0xFE;
+        
+        /* Request transmission */
+        if(HAL_CAN_AddTxMessage(hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK)
         {
-            /*
-            if (HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData))
-            {
-                rpm = 111;
-            }
-            else
-            {
-                rpm = 222;
-            }*/
+            // Assume successful.
+        }
+        
+        /* Wait transmission complete */
+        while(HAL_CAN_GetTxMailboxesFreeLevel(hcan) != 3) { /* Hang out */ }
 
-            if (HAL_OK != HAL_CAN_AddTxMessage(hcan, &TxHeader, TxData, &TxMailbox))
-            {
-                rpm = 696;
-            }
-            else
-            {
-                HAL_Delay(500);
-
-                rpm += HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) + HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO1);
-            }
-
-            data_store::instance()->set_rpm(rpm);
-            
-            HAL_Delay(500);
+        /*##-5- Start the Reception process ########################################*/
+        if(HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) != 1)
+        {
+            /* Reception Missing */
+            data_store::instance()->set_rpm(4);
+        }
+        else if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+        {
+            /* Reception Error */
+            data_store::instance()->set_rpm(5);
+        }
+        else
+        {
+            data_store::instance()->set_rpm(6);
         }
     }
 }
