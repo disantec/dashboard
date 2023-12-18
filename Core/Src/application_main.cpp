@@ -18,6 +18,8 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
     uint32_t count = 0;
 
+    data_store::instance()->set_rpm(1);
+
     while (true) 
     {
         TxHeader.StdId = 0x11;
@@ -35,7 +37,14 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         }
         
         /* Wait transmission complete */
-        while(HAL_CAN_GetTxMailboxesFreeLevel(hcan) != 3) { /* Hang out */ }
+        while(HAL_CAN_GetTxMailboxesFreeLevel(hcan) != 3) 
+        { 
+            // Uncomment to confirm infinite loop. This will happen if a second node
+            // is not on the bus to ACK the test message we're sending out.
+            //count++; data_store::instance()->set_rpm(count);
+        }
+
+        count = 0;
 
         /*##-5- Start the Reception process ########################################*/
         if(HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) != 1)
