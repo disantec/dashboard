@@ -41,10 +41,11 @@ TouchGFX/build/STM32F469-DISCO/TouchGFX/target/STM32TouchController.o: \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h \
  Drivers/BSP/STM32469I-Discovery/../Components/ft6x06/ft6x06.h \
- Drivers/BSP/STM32469I-Discovery/../Components/ft6x06/../Common/ts.h
+ c:\users\disan\git\dashboard\drivers\bsp\components\common\ts.h
 
 TouchGFX/target/STM32TouchController.hpp:
 
@@ -132,10 +133,12 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
+Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h:
 
 Drivers/BSP/STM32469I-Discovery/../Components/ft6x06/ft6x06.h:
 
-Drivers/BSP/STM32469I-Discovery/../Components/ft6x06/../Common/ts.h:
+c:\users\disan\git\dashboard\drivers\bsp\components\common\ts.h:

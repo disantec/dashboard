@@ -41,7 +41,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         { 
             // Uncomment to confirm infinite loop. This will happen if a second node
             // is not on the bus to ACK the test message we're sending out.
-            //count++; data_store::instance()->set_rpm(count);
+            // count++; data_store::instance()->set_rpm(count);
         }
 
         count = 0;
