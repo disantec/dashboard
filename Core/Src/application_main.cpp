@@ -18,7 +18,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
     uint32_t count = 0;
 
-    data_store::instance()->set_rpm(1);
+    data_store::instance()->set_rpm(88);
 
     while (true) 
     {
