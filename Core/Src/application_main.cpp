@@ -18,49 +18,62 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
     uint32_t count = 0;
 
-    data_store::instance()->set_rpm(1);
+    data_store::instance()->set_rpm(88);
 
     while (true) 
     {
-        TxHeader.StdId = 0x11;
-        TxHeader.RTR = CAN_RTR_DATA;
-        TxHeader.IDE = CAN_ID_STD;
-        TxHeader.DLC = 2;
-        TxHeader.TransmitGlobalTime = DISABLE;
-        TxData[0] = 0xCA;
-        TxData[1] = 0xFE;
+        // TxHeader.StdId = 0x11;
+        // TxHeader.RTR = CAN_RTR_DATA;
+        // TxHeader.IDE = CAN_ID_STD;
+        // TxHeader.DLC = 2;
+        // TxHeader.TransmitGlobalTime = DISABLE;
+        // TxData[0] = 0xCA;
+        // TxData[1] = 0xFE;
         
-        /* Request transmission */
-        if(HAL_CAN_AddTxMessage(hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+        // /* Request transmission */
+        // if(HAL_CAN_AddTxMessage(hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+        // {
+        //     // Assume successful.
+        // }
+        
+        // /* Wait transmission complete */
+        // while(HAL_CAN_GetTxMailboxesFreeLevel(hcan) != 3) 
+        // { 
+        //     // Uncomment to confirm infinite loop. This will happen if a second node
+        //     // is not on the bus to ACK the test message we're sending out.
+        //     // count++; data_store::instance()->set_rpm(count);
+        // }
+
+        // count = 0;
+
+        // /*##-5- Start the Reception process ########################################*/
+        // if(HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) != 1)
+        // {
+        //     /* Reception Missing */
+        //     data_store::instance()->set_rpm(4);
+        // }
+        // else if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+        // {
+        //     /* Reception Error */
+        //     data_store::instance()->set_rpm(5);
+        // }
+        // else
+        // {
+        //     data_store::instance()->set_rpm(6);
+        // }
+
+        if (0 != HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) && HAL_OK==HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData))
         {
-            // Assume successful.
-        }
-        
-        /* Wait transmission complete */
-        while(HAL_CAN_GetTxMailboxesFreeLevel(hcan) != 3) 
-        { 
-            // Uncomment to confirm infinite loop. This will happen if a second node
-            // is not on the bus to ACK the test message we're sending out.
-            // count++; data_store::instance()->set_rpm(count);
+            count++;
+
         }
 
-        count = 0;
+        data_store::instance()->set_rpm(count);
 
-        /*##-5- Start the Reception process ########################################*/
-        if(HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) != 1)
-        {
-            /* Reception Missing */
-            data_store::instance()->set_rpm(4);
-        }
-        else if(HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
-        {
-            /* Reception Error */
-            data_store::instance()->set_rpm(5);
-        }
-        else
-        {
-            data_store::instance()->set_rpm(6);
-        }
+
+
+
+
     }
 }
 
