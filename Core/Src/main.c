@@ -47,7 +47,6 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-CAN_HandleTypeDef hcan1;
 CAN_HandleTypeDef hcan2;
 
 CRC_HandleTypeDef hcrc;
@@ -61,6 +60,8 @@ I2C_HandleTypeDef hi2c1;
 LTDC_HandleTypeDef hltdc;
 
 QSPI_HandleTypeDef hqspi;
+
+UART_HandleTypeDef huart6;
 
 SDRAM_HandleTypeDef hsdram1;
 
@@ -92,8 +93,8 @@ static void MX_FMC_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_I2C1_Init(void);
-static void MX_CAN1_Init(void);
 static void MX_CAN2_Init(void);
+static void MX_USART6_UART_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
@@ -127,8 +128,6 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
-  int yourVariable = 42;
-
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -147,8 +146,8 @@ int main(void)
   MX_LTDC_Init();
   MX_QUADSPI_Init();
   MX_I2C1_Init();
-  MX_CAN1_Init();
   MX_CAN2_Init();
+  MX_USART6_UART_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -259,43 +258,6 @@ void SystemClock_Config(void)
 }
 
 /**
-  * @brief CAN1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_CAN1_Init(void)
-{
-
-  /* USER CODE BEGIN CAN1_Init 0 */
-
-  /* USER CODE END CAN1_Init 0 */
-
-  /* USER CODE BEGIN CAN1_Init 1 */
-
-  /* USER CODE END CAN1_Init 1 */
-  hcan1.Instance = CAN1;
-  hcan1.Init.Prescaler = 5;
-  hcan1.Init.Mode = CAN_MODE_NORMAL;
-  hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan1.Init.TimeSeg1 = CAN_BS1_5TQ;
-  hcan1.Init.TimeSeg2 = CAN_BS2_3TQ;
-  hcan1.Init.TimeTriggeredMode = DISABLE;
-  hcan1.Init.AutoBusOff = DISABLE;
-  hcan1.Init.AutoWakeUp = DISABLE;
-  hcan1.Init.AutoRetransmission = DISABLE;
-  hcan1.Init.ReceiveFifoLocked = DISABLE;
-  hcan1.Init.TransmitFifoPriority = DISABLE;
-  if (HAL_CAN_Init(&hcan1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN CAN1_Init 2 */
-
-  /* USER CODE END CAN1_Init 2 */
-
-}
-
-/**
   * @brief CAN2 Initialization Function
   * @param None
   * @retval None
@@ -314,12 +276,12 @@ static void MX_CAN2_Init(void)
   hcan2.Init.Prescaler = 5;
   hcan2.Init.Mode = CAN_MODE_NORMAL;
   hcan2.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan2.Init.TimeSeg1 = CAN_BS1_5TQ;
-  hcan2.Init.TimeSeg2 = CAN_BS2_3TQ;
+  hcan2.Init.TimeSeg1 = CAN_BS1_6TQ;
+  hcan2.Init.TimeSeg2 = CAN_BS2_2TQ;
   hcan2.Init.TimeTriggeredMode = DISABLE;
   hcan2.Init.AutoBusOff = DISABLE;
   hcan2.Init.AutoWakeUp = DISABLE;
-  hcan2.Init.AutoRetransmission = DISABLE;
+  hcan2.Init.AutoRetransmission = ENABLE;
   hcan2.Init.ReceiveFifoLocked = DISABLE;
   hcan2.Init.TransmitFifoPriority = DISABLE;
   if (HAL_CAN_Init(&hcan2) != HAL_OK)
@@ -327,6 +289,23 @@ static void MX_CAN2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN2_Init 2 */
+
+  CAN_FilterTypeDef  sFilterConfig;
+  sFilterConfig.FilterBank = 14;
+  sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+  sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+  sFilterConfig.FilterIdHigh = 0x0000;
+  sFilterConfig.FilterIdLow = 0x0000;
+  sFilterConfig.FilterMaskIdHigh = 0x0000;
+  sFilterConfig.FilterMaskIdLow = 0x0000;
+  sFilterConfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+  sFilterConfig.FilterActivation = ENABLE;
+  sFilterConfig.SlaveStartFilterBank = 14;
+
+  if(HAL_CAN_ConfigFilter(&hcan2, &sFilterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
 
   /* USER CODE END CAN2_Init 2 */
 
@@ -673,6 +652,39 @@ static void MX_QUADSPI_Init(void)
 
 }
 
+/**
+  * @brief USART6 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART6_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART6_Init 0 */
+
+  /* USER CODE END USART6_Init 0 */
+
+  /* USER CODE BEGIN USART6_Init 1 */
+
+  /* USER CODE END USART6_Init 1 */
+  huart6.Instance = USART6;
+  huart6.Init.BaudRate = 9600;
+  huart6.Init.WordLength = UART_WORDLENGTH_8B;
+  huart6.Init.StopBits = UART_STOPBITS_1;
+  huart6.Init.Parity = UART_PARITY_NONE;
+  huart6.Init.Mode = UART_MODE_TX_RX;
+  huart6.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart6.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART6_Init 2 */
+
+  /* USER CODE END USART6_Init 2 */
+
+}
+
 /* FMC initialization function */
 static void MX_FMC_Init(void)
 {
@@ -736,16 +748,16 @@ static void MX_GPIO_Init(void)
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOK_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOJ_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
@@ -807,7 +819,8 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
 
-  application_main(argument, &hcan2);
+  if (HAL_CAN_Start(&hcan2) != HAL_OK) { Error_Handler(); }
+  else                                 { application_main(argument, &hcan2); }
 
   /* Infinite loop */
   for(;;)
