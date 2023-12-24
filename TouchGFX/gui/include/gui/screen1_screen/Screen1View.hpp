@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void setRPM (int val);
+    virtual void setTPS (int val);
 
 protected:
 };

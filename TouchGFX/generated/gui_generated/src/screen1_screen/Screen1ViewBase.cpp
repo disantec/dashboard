@@ -4,6 +4,7 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <images/BitmapDatabase.hpp>
 
 Screen1ViewBase::Screen1ViewBase()
 {
@@ -15,7 +16,15 @@ Screen1ViewBase::Screen1ViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(box1);
 
-    rpm.setPosition(275, 196, 251, 88);
+    tps.setPosition(670, 442, 119, 27);
+    tps.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    tps.setLinespacing(0);
+    Unicode::snprintf(tpsBuffer, TPS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_88RJ).getText());
+    tps.setWildcard(tpsBuffer);
+    tps.setTypedText(touchgfx::TypedText(T_TPS));
+    add(tps);
+
+    rpm.setPosition(243, 196, 314, 88);
     rpm.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     rpm.setLinespacing(0);
     Unicode::snprintf(rpmBuffer, RPM_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZEOI).getText());
@@ -23,13 +32,15 @@ Screen1ViewBase::Screen1ViewBase()
     rpm.setTypedText(touchgfx::TypedText(T_RPM));
     add(rpm);
 
-    tp.setXY(701, 64);
-    tp.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    tp.setLinespacing(0);
-    tp.setWildcard(touchgfx::TypedText(T___SINGLEUSE_0X6G).getText());
-    tp.resizeToCurrentText();
-    tp.setTypedText(touchgfx::TypedText(T_TP));
-    add(tp);
+    RPM.setPosition(504, 264, 107, 29);
+    RPM.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    RPM.setLinespacing(0);
+    RPM.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K2H6));
+    add(RPM);
+
+    image1.setXY(7, 368);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_ZR112_ID));
+    add(image1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

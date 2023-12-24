@@ -6,14 +6,17 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_0X6G" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">00</Translation>
+      <Text Id="__SingleUse_K2H6" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">RPM</Translation>
       </Text>
-      <Text Id="tp" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_88RJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">000</Translation>
+      </Text>
+      <Text Id="tps" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">TP &lt;value&gt; %</Translation>
       </Text>
       <Text Id="__SingleUse_ZEOI" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">000</Translation>
+        <Translation Language="GB">00000</Translation>
       </Text>
       <Text Id="rpm" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -21,7 +24,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?">
+    <Typography Id="Default" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x4E20">
       <LanguageSetting Language="GB" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0x7E" />
     </Typography>
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?">

@@ -16,6 +16,8 @@ public:
     }
 
     virtual void setRPM (int val) {};
+    virtual void setTPS (int val) {};
+    
 protected:
     Model* model;
 };
