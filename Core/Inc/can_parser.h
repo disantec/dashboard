@@ -18,6 +18,7 @@ public:
     void process(uint32_t id, uint8_t data[]);
 
 private:
+    can_parser() { p_data_store_ = data_store::instance(); }
 
     static can_parser *p_instance_;
 
