@@ -3,3 +3,4 @@ TouchGFX/build
 
 # Exclude other troublemakers that are updated across different machines.
 gcc/components.mk
+TouchGFX/config/gcc/app.mk
