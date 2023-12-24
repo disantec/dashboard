@@ -9,26 +9,45 @@
             "Name": "box1",
             "Width": 800,
             "Height": 480,
+            "LockPosition": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "rpm",
+            "X": 275,
+            "Y": 196,
+            "Width": 251,
+            "Height": 88,
+            "TextId": "rpm",
+            "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea",
-            "X": 381,
-            "Y": 230,
-            "Width": 39,
-            "Height": 24,
-            "TextId": "textArea",
-            "TextRotation": "0",
-            "AutoSize": true,
+            },
             "Wildcard1": {
               "TextId": "__SingleUse_ZEOI",
               "UseBuffer": true,
               "BufferSize": 4
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tp",
+            "X": 701,
+            "Y": 64,
+            "Width": 86,
+            "Height": 20,
+            "TextId": "tp",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0X6G"
             }
           }
         ],
