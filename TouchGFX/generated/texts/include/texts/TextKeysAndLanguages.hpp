@@ -12,6 +12,7 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_K2H6,
     T___SINGLEUSE_88RJ,
     T_TPS,
     T___SINGLEUSE_ZEOI,

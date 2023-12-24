@@ -15,7 +15,7 @@ Screen1ViewBase::Screen1ViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(box1);
 
-    tps.setPosition(153, 18, 494, 25);
+    tps.setPosition(670, 442, 119, 27);
     tps.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     tps.setLinespacing(0);
     Unicode::snprintf(tpsBuffer, TPS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_88RJ).getText());
@@ -30,6 +30,12 @@ Screen1ViewBase::Screen1ViewBase()
     rpm.setWildcard(rpmBuffer);
     rpm.setTypedText(touchgfx::TypedText(T_RPM));
     add(rpm);
+
+    RPM.setPosition(504, 264, 107, 29);
+    RPM.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    RPM.setLinespacing(0);
+    RPM.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K2H6));
+    add(RPM);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
