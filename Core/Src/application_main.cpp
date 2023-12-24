@@ -1,6 +1,5 @@
-#include "cmsis_os.h"
 #include "stm32f4xx_hal.h"
-#include "main.h"
+#include "can_parser.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,16 +11,19 @@ extern "C" {
 /// @param hcan Pointer to the desired CAN peripheral's handler.
 void application_main(void *arg, CAN_HandleTypeDef *hcan)
 {
-    CAN_RxHeaderTypeDef   RxHeader;  ///< Incoming CAN message header info.
-    uint8_t               RxData[8]; ///< Incoming CAN message data bytes.
-    
+    can_parser *p_can_parser = can_parser::instance(); ///< Pointer to the instance of can_parser.
+
+    CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
+    uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
+
     // Begin infinite "main" loop of program. Execution is not intended to move beyond this.
     while (true) 
     {
-        // 
-        while (0 != HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) && HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData))
+        // For each main loop, scoop up all available CAN messages that have come in and forward them off for processing.
+        // This processing loop will continue so long as messages are available in the FIFO.
+        while (0 != HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) && HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rxHeader, rxData))
         {
-            ///@todo Call upon processing instance.
+            p_can_parser->process();
         }
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
