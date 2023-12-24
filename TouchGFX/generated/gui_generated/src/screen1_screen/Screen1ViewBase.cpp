@@ -16,11 +16,39 @@ Screen1ViewBase::Screen1ViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(box1);
 
-    tps.setPosition(670, 442, 119, 27);
+    batt.setXY(679, 447);
+    batt.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    batt.setLinespacing(0);
+    Unicode::snprintf(battBuffer, BATT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_82MB).getText());
+    batt.setWildcard(battBuffer);
+    batt.resizeToCurrentText();
+    batt.setTypedText(touchgfx::TypedText(T_BATT));
+    add(batt);
+
+    engtmp.setXY(679, 413);
+    engtmp.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    engtmp.setLinespacing(0);
+    Unicode::snprintf(engtmpBuffer, ENGTMP_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_3AXW).getText());
+    engtmp.setWildcard(engtmpBuffer);
+    engtmp.resizeToCurrentText();
+    engtmp.setTypedText(touchgfx::TypedText(T_ENGTMP));
+    add(engtmp);
+
+    lambda.setXY(679, 379);
+    lambda.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    lambda.setLinespacing(0);
+    Unicode::snprintf(lambdaBuffer, LAMBDA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_1CGZ).getText());
+    lambda.setWildcard(lambdaBuffer);
+    lambda.resizeToCurrentText();
+    lambda.setTypedText(touchgfx::TypedText(T_LAMBDA1));
+    add(lambda);
+
+    tps.setXY(679, 348);
     tps.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     tps.setLinespacing(0);
     Unicode::snprintf(tpsBuffer, TPS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_88RJ).getText());
     tps.setWildcard(tpsBuffer);
+    tps.resizeToCurrentText();
     tps.setTypedText(touchgfx::TypedText(T_TPS));
     add(tps);
 
@@ -32,15 +60,43 @@ Screen1ViewBase::Screen1ViewBase()
     rpm.setTypedText(touchgfx::TypedText(T_RPM));
     add(rpm);
 
-    RPM.setPosition(504, 264, 107, 29);
-    RPM.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    RPM.setLinespacing(0);
-    RPM.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K2H6));
-    add(RPM);
+    rpm_label.setPosition(504, 264, 107, 29);
+    rpm_label.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    rpm_label.setLinespacing(0);
+    rpm_label.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K2H6));
+    add(rpm_label);
+
+    mph_label.setPosition(243, 115, 107, 29);
+    mph_label.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    mph_label.setLinespacing(0);
+    mph_label.setTypedText(touchgfx::TypedText(T___SINGLEUSE_14NY));
+    add(mph_label);
+
+    gear_label.setPosition(558, 115, 107, 29);
+    gear_label.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    gear_label.setLinespacing(0);
+    gear_label.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VPGR));
+    add(gear_label);
 
     image1.setXY(7, 368);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_ZR112_ID));
     add(image1);
+
+    gndspd.setXY(194, 95);
+    gndspd.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    gndspd.setLinespacing(0);
+    gndspd.setWildcard(touchgfx::TypedText(T___SINGLEUSE_7ZGC).getText());
+    gndspd.resizeToCurrentText();
+    gndspd.setTypedText(touchgfx::TypedText(T_GNDSPD));
+    add(gndspd);
+
+    gear.setXY(532, 95);
+    gear.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    gear.setLinespacing(0);
+    gear.setWildcard(touchgfx::TypedText(T___SINGLEUSE_83V3).getText());
+    gear.resizeToCurrentText();
+    gear.setTypedText(touchgfx::TypedText(T_GEAR));
+    add(gear);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

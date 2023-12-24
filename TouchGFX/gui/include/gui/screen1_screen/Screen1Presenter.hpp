@@ -29,6 +29,8 @@ public:
 
     virtual void setRPM (int val);
     virtual void setTPS (int val);
+    // virtual void setGNDSPD (int val);
+    // virtual void setENGTMP (int val);
 
 private:
     Screen1Presenter();

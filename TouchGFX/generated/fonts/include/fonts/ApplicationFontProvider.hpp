@@ -18,6 +18,7 @@ struct Typography
     static const touchgfx::FontId LARGE = 2;
     static const touchgfx::FontId LARGE_AUTO_GENERATED_FOR_GB = 3;
     static const touchgfx::FontId SMALL = 4;
+    static const touchgfx::FontId TYPOGRAPHY_00 = 5;
 };
 
 struct TypographyFontIndex
@@ -27,6 +28,7 @@ struct TypographyFontIndex
     static const touchgfx::FontId LARGE = 0;                         // verdana_40_4bpp
     static const touchgfx::FontId LARGE_AUTO_GENERATED_FOR_GB = 2;   // verdana_87_4bpp
     static const touchgfx::FontId SMALL = 3;                         // verdana_10_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_00 = 0;                 // verdana_40_4bpp
     static const uint16_t NUMBER_OF_FONTS = 4;
 };
 
