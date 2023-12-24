@@ -3,8 +3,6 @@
 #include "data_store.h"
 
 #ifndef SIMULATOR
-#include "main.h"
-
 
 extern "C"
 {

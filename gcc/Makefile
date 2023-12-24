@@ -130,7 +130,7 @@ c_compiler := arm-none-eabi-gcc
 c_compiler_options += \
     -g \
     -mthumb -fno-exceptions \
-    -mno-thumb-interwork -std=c99 \
+    -mno-thumb-interwork -std=c11 \
     $(no_libs) \
     -Os -fno-strict-aliasing -fdata-sections -ffunction-sections
 

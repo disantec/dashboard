@@ -3,6 +3,8 @@
 #ifndef DATASTORE_H
 #define DATASTORE_H
 
+#include <stdint.h>
+
 class data_store 
 {
 public:
@@ -27,6 +29,8 @@ private:
     //#TODO: maybe make rpm_ an int
     double rpm_ = 0.0;
     double tps_ = 0.0;
+
+    uint32_t test = 0;
 };
 
 #endif
