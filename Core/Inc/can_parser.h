@@ -15,10 +15,9 @@ public:
         return p_instance_;
     }
 
-    void process(uint32_t id);
+    void process(uint32_t id, uint8_t data[]);
 
 private:
-    can_parser() { /* Default Constructor */ }
 
     static can_parser *p_instance_;
 

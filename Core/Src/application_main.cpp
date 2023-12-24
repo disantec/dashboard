@@ -23,7 +23,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         // This processing loop will continue so long as messages are available in the FIFO.
         while (0 != HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) && HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rxHeader, rxData))
         {
-            p_can_parser->process(rxHeader.StdId);
+            p_can_parser->process(rxHeader.StdId, rxData);
         }
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
