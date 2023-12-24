@@ -17,6 +17,6 @@ void Screen1View::tearDownScreen()
 
 void Screen1View::setRPM (int val)
 {
-	Unicode::snprintf(textAreaBuffer, TEXTAREA_SIZE, "%d", val);
-	textArea.invalidate();
+	Unicode::snprintf(rpmBuffer, RPM_SIZE, "%d", val);
+	rpm.invalidate();
 }
