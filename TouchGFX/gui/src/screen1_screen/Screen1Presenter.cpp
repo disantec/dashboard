@@ -20,4 +20,11 @@ void Screen1Presenter::deactivate()
 void Screen1Presenter::setRPM (int val)
 {
 	view.setRPM (val);
+
+}
+
+void Screen1Presenter::setTPS (int val)
+{
+	view.setTPS (val);
+
 }

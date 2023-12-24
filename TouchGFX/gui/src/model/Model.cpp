@@ -15,4 +15,5 @@ Model::Model() : modelListener(0) { /* Default constructor */ }
 void Model::tick()
 {
     modelListener->setRPM (data_store::instance()->get_rpm());
+    modelListener->setTPS (data_store::instance()->get_tps());
 }

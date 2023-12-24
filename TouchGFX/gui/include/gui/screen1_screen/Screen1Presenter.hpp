@@ -28,6 +28,7 @@ public:
     virtual ~Screen1Presenter() {};
 
     virtual void setRPM (int val);
+    virtual void setTPS (int val);
 
 private:
     Screen1Presenter();

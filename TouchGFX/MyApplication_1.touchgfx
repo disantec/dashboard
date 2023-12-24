@@ -13,10 +13,30 @@
           },
           {
             "Type": "TextArea",
+            "Name": "tps",
+            "X": 679,
+            "Y": 18,
+            "Width": 111,
+            "Height": 39,
+            "TextId": "tps",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_88RJ",
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
+          },
+          {
+            "Type": "TextArea",
             "Name": "rpm",
-            "X": 275,
+            "X": 300,
             "Y": 196,
-            "Width": 251,
+            "Width": 201,
             "Height": 88,
             "TextId": "rpm",
             "TextRotation": "0",
@@ -29,25 +49,6 @@
               "TextId": "__SingleUse_ZEOI",
               "UseBuffer": true,
               "BufferSize": 4
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "tp",
-            "X": 701,
-            "Y": 64,
-            "Width": 86,
-            "Height": 24,
-            "TextId": "tp",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_0X6G"
             }
           }
         ],

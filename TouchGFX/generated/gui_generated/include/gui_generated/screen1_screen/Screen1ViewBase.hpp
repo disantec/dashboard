@@ -27,12 +27,14 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box box1;
+    touchgfx::TextAreaWithOneWildcard tps;
     touchgfx::TextAreaWithOneWildcard rpm;
-    touchgfx::TextAreaWithOneWildcard tp;
 
     /*
      * Wildcard Buffers
      */
+    static const uint16_t TPS_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar tpsBuffer[TPS_SIZE];
     static const uint16_t RPM_SIZE = 4;
     touchgfx::Unicode::UnicodeChar rpmBuffer[RPM_SIZE];
 

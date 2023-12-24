@@ -12,8 +12,8 @@ enum LANGUAGES
 
 enum TEXTS
 {
-    T___SINGLEUSE_0X6G,
-    T_TP,
+    T___SINGLEUSE_88RJ,
+    T_TPS,
     T___SINGLEUSE_ZEOI,
     T_RPM,
     NUMBER_OF_TEXT_KEYS
