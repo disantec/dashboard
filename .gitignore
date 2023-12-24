@@ -1,1 +1,5 @@
+# Ignore the entire TouchGFX build directory as this changes on every build
 TouchGFX/build
+
+# Exclude other troublemakers that are updated across different machines.
+gcc/components.mk
