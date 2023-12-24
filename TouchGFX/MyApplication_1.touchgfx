@@ -185,7 +185,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_7ZGC"
+              "TextId": "__SingleUse_7ZGC",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -204,7 +206,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_83V3"
+              "TextId": "__SingleUse_83V3",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           }
         ],

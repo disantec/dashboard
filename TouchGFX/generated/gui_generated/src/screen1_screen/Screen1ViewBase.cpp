@@ -85,7 +85,8 @@ Screen1ViewBase::Screen1ViewBase()
     gndspd.setXY(194, 95);
     gndspd.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     gndspd.setLinespacing(0);
-    gndspd.setWildcard(touchgfx::TypedText(T___SINGLEUSE_7ZGC).getText());
+    Unicode::snprintf(gndspdBuffer, GNDSPD_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7ZGC).getText());
+    gndspd.setWildcard(gndspdBuffer);
     gndspd.resizeToCurrentText();
     gndspd.setTypedText(touchgfx::TypedText(T_GNDSPD));
     add(gndspd);
@@ -93,7 +94,8 @@ Screen1ViewBase::Screen1ViewBase()
     gear.setXY(532, 95);
     gear.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     gear.setLinespacing(0);
-    gear.setWildcard(touchgfx::TypedText(T___SINGLEUSE_83V3).getText());
+    Unicode::snprintf(gearBuffer, GEAR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_83V3).getText());
+    gear.setWildcard(gearBuffer);
     gear.resizeToCurrentText();
     gear.setTypedText(touchgfx::TypedText(T_GEAR));
     add(gear);

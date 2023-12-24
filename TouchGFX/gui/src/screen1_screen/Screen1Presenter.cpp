@@ -28,3 +28,33 @@ void Screen1Presenter::setTPS (int val)
 	view.setTPS (val * .1);
 
 }
+
+void Screen1Presenter::setGNDSPD (int val)
+{
+	view.setGNDSPD (val * .1);
+
+}
+
+void Screen1Presenter::setENGTMP (int val)
+{
+	view.setENGTMP (val * .1);
+
+}
+
+void Screen1Presenter::setGEAR (int val)
+{
+	view.setGEAR (val * .1);
+
+}
+
+void Screen1Presenter::setLAMBDA(int val)
+{
+	view.setLAMBDA (val * .001);
+
+}
+
+void Screen1Presenter::setBATT(int val)
+{
+	view.setBATT (val * .01);
+
+}

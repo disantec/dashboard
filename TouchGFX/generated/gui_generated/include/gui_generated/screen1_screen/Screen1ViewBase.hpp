@@ -54,6 +54,10 @@ protected:
     touchgfx::Unicode::UnicodeChar tpsBuffer[TPS_SIZE];
     static const uint16_t RPM_SIZE = 10;
     touchgfx::Unicode::UnicodeChar rpmBuffer[RPM_SIZE];
+    static const uint16_t GNDSPD_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar gndspdBuffer[GNDSPD_SIZE];
+    static const uint16_t GEAR_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar gearBuffer[GEAR_SIZE];
 
 private:
 

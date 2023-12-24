@@ -13,6 +13,11 @@ public:
     virtual void tearDownScreen();
     virtual void setRPM (int val);
     virtual void setTPS (int val);
+    virtual void setGNDSPD (int val);
+    virtual void setENGTMP (int val);
+    virtual void setGEAR (int val);
+    virtual void setLAMBDA (int val);
+    virtual void setBATT (int val);
 
 protected:
 };

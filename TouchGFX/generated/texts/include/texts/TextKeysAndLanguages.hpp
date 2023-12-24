@@ -12,6 +12,8 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T_GNDSPD,
+    T___SINGLEUSE_7ZGC,
     T_LAMBDA1,
     T___SINGLEUSE_1CGZ,
     T___SINGLEUSE_VPGR,
@@ -20,8 +22,6 @@ enum TEXTS
     T_BATT,
     T___SINGLEUSE_82MB,
     T___SINGLEUSE_14NY,
-    T___SINGLEUSE_7ZGC,
-    T_GNDSPD,
     T_TPS,
     T___SINGLEUSE_3AXW,
     T___SINGLEUSE_K2H6,
