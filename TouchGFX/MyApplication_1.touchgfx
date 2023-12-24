@@ -65,6 +65,15 @@
               "Green": 255,
               "Blue": 255
             }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 7,
+            "Y": 368,
+            "Width": 350,
+            "Height": 112,
+            "RelativeFilename": "zr112.png"
           }
         ],
         "Interactions": []

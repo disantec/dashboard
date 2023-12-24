@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -31,6 +32,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard tps;
     touchgfx::TextAreaWithOneWildcard rpm;
     touchgfx::TextArea RPM;
+    touchgfx::Image image1;
 
     /*
      * Wildcard Buffers

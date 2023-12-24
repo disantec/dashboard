@@ -4,6 +4,7 @@
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <images/BitmapDatabase.hpp>
 
 Screen1ViewBase::Screen1ViewBase()
 {
@@ -36,6 +37,10 @@ Screen1ViewBase::Screen1ViewBase()
     RPM.setLinespacing(0);
     RPM.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K2H6));
     add(RPM);
+
+    image1.setXY(7, 368);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_ZR112_ID));
+    add(image1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
