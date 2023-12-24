@@ -7,9 +7,7 @@
 
 class can_parser 
 {
-
 public:
-
     static can_parser *instance()
     {
         if (nullptr == p_instance_) { p_instance_ = new can_parser(); }

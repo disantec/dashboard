@@ -5,16 +5,13 @@
 
 class data_store 
 {
-
 public:
-
     static data_store *instance()
     {
         if (nullptr == p_instance_) { p_instance_ = new data_store(); }
 
         return p_instance_;
     }
-
 
     void set_rpm(double rpm) { rpm_ = rpm; }
     double get_rpm() { return rpm_; }
