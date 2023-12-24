@@ -25,6 +25,6 @@ void Screen1Presenter::setRPM (int val)
 
 void Screen1Presenter::setTPS (int val)
 {
-	view.setTPS (val);
+	view.setTPS (val * 0.00039308176);
 
 }

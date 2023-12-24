@@ -33,9 +33,9 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TPS_SIZE = 4;
+    static const uint16_t TPS_SIZE = 10;
     touchgfx::Unicode::UnicodeChar tpsBuffer[TPS_SIZE];
-    static const uint16_t RPM_SIZE = 4;
+    static const uint16_t RPM_SIZE = 10;
     touchgfx::Unicode::UnicodeChar rpmBuffer[RPM_SIZE];
 
 private:

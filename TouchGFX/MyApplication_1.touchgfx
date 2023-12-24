@@ -14,10 +14,10 @@
           {
             "Type": "TextArea",
             "Name": "tps",
-            "X": 679,
-            "Y": 18,
-            "Width": 111,
-            "Height": 39,
+            "X": 153,
+            "Y": 17,
+            "Width": 494,
+            "Height": 25,
             "TextId": "tps",
             "TextRotation": "0",
             "Color": {
@@ -28,15 +28,15 @@
             "Wildcard1": {
               "TextId": "__SingleUse_88RJ",
               "UseBuffer": true,
-              "BufferSize": 4
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
             "Name": "rpm",
-            "X": 300,
+            "X": 243,
             "Y": 196,
-            "Width": 201,
+            "Width": 314,
             "Height": 88,
             "TextId": "rpm",
             "TextRotation": "0",
@@ -48,7 +48,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ZEOI",
               "UseBuffer": true,
-              "BufferSize": 4
+              "BufferSize": 10
             }
           }
         ],

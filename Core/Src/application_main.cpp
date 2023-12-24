@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-//#define TEST_MODE
+// #define TEST_MODE
 
 /// @brief Application C++ entry point. Responsible for CAN monitoring and delegation of processing.
 ///
@@ -24,6 +24,8 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         #ifdef TEST_MODE
         rxData[0] = 0x02;
         rxData[1] = 0x01;
+        rxData[2] = 0x09;
+        rxData[3] = 0x08;
 
         p_can_parser->process(0x5F0, rxData);
         #else
