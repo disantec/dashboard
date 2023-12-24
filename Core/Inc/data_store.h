@@ -3,8 +3,8 @@
 #ifndef DATASTORE_H
 #define DATASTORE_H
 
-
-class data_store {
+class data_store 
+{
 
 public:
 
@@ -23,16 +23,13 @@ public:
     double get_tps() { return tps_; }
 
 private:
-    data_store() {}
+    data_store() { /* Default Constructor */ }
 
     static data_store *p_instance_;
     
     //#TODO: maybe make rpm_ an int
     double rpm_ = 0.0;
     double tps_ = 0.0;
-    
-
-
 };
 
 #endif
