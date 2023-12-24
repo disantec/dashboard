@@ -15,8 +15,8 @@ public:
         return p_instance_;
     }
 
-    void set_rpm(double rpm) { rpm_ = rpm; }
-    double get_rpm() { return rpm_; }
+    void set_rpm(int rpm) { rpm_ = rpm; }
+    int get_rpm() { return rpm_; }
 
     void set_tps(double tps) { tps_ = tps; }
     double get_tps() { return tps_; }
@@ -51,7 +51,7 @@ private:
     static data_store *p_instance_;
     
     //#TODO: maybe make rpm_ an int
-    double rpm_ = 0.0;
+    int rpm_ = 0;
     double tps_ = 0.0;
     double gndspd_ = 0.0;
     double engtmp_ = 0.0;
