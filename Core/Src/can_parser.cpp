@@ -4,7 +4,7 @@
 
 can_parser *can_parser::p_instance_ = nullptr;
 
-void can_parser::process()
+void can_parser::process(uint32_t id)
 {
     ///@todo Do the CAN processing.
 }
