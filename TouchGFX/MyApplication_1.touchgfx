@@ -13,11 +13,74 @@
           },
           {
             "Type": "TextArea",
+            "Name": "batt",
+            "X": 679,
+            "Y": 447,
+            "Width": 93,
+            "Height": 20,
+            "TextId": "batt",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_82MB",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "engtmp",
+            "X": 679,
+            "Y": 413,
+            "Width": 92,
+            "Height": 20,
+            "TextId": "engtmp",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_3AXW",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "lambda",
+            "X": 679,
+            "Y": 379,
+            "Width": 78,
+            "Height": 20,
+            "TextId": "lambda1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_1CGZ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
             "Name": "tps",
-            "X": 670,
-            "Y": 442,
-            "Width": 119,
-            "Height": 27,
+            "X": 679,
+            "Y": 348,
+            "Width": 99,
+            "Height": 20,
             "TextId": "tps",
             "TextRotation": "0",
             "Color": {
@@ -25,6 +88,7 @@
               "Green": 255,
               "Blue": 255
             },
+            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_88RJ",
               "UseBuffer": true,
@@ -53,12 +117,42 @@
           },
           {
             "Type": "TextArea",
-            "Name": "RPM",
+            "Name": "rpm_label",
             "X": 504,
             "Y": 264,
             "Width": 107,
             "Height": 29,
             "TextId": "__SingleUse_K2H6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "mph_label",
+            "X": 243,
+            "Y": 115,
+            "Width": 107,
+            "Height": 29,
+            "TextId": "__SingleUse_14NY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gear_label",
+            "X": 558,
+            "Y": 115,
+            "Width": 107,
+            "Height": 29,
+            "TextId": "__SingleUse_VPGR",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -74,6 +168,48 @@
             "Width": 350,
             "Height": 112,
             "RelativeFilename": "zr112.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gndspd",
+            "X": 194,
+            "Y": 95,
+            "Width": 75,
+            "Height": 41,
+            "TextId": "gndspd",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_7ZGC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gear",
+            "X": 532,
+            "Y": 95,
+            "Width": 50,
+            "Height": 41,
+            "TextId": "gear",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_83V3",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": []

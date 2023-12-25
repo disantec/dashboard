@@ -33,8 +33,8 @@ public:
     void set_gear(uint32_t gear) { gear_ = gear; }
     uint32_t get_gear() { return gear_; }
 
-    void set_lambda1(uint32_t lambda1) { lambda1_ = lambda1; }
-    uint32_t get_lambda1() { return lambda1_; }
+    void set_lambda(uint32_t lambda) { lambda_ = lambda; }
+    uint32_t get_lambda() { return lambda_; }
 
     void set_map(uint32_t map) { map_ = map; }
     uint32_t get_map() { return map_; }
@@ -57,7 +57,7 @@ private:
     uint32_t engtmp_ = 0.0;
     uint32_t inltmp_ = 0.0;
     uint32_t gear_ = 1;
-    uint32_t lambda1_ = 0.0;
+    uint32_t lambda_ = 0.0;
     uint32_t map_ = 0.0;
     uint32_t bap_ = 0.0;
     uint32_t batt_ = 0.0;

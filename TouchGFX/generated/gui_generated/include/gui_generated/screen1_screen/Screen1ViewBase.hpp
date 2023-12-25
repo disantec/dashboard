@@ -29,18 +29,35 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box box1;
+    touchgfx::TextAreaWithOneWildcard batt;
+    touchgfx::TextAreaWithOneWildcard engtmp;
+    touchgfx::TextAreaWithOneWildcard lambda;
     touchgfx::TextAreaWithOneWildcard tps;
     touchgfx::TextAreaWithOneWildcard rpm;
-    touchgfx::TextArea RPM;
+    touchgfx::TextArea rpm_label;
+    touchgfx::TextArea mph_label;
+    touchgfx::TextArea gear_label;
     touchgfx::Image image1;
+    touchgfx::TextAreaWithOneWildcard gndspd;
+    touchgfx::TextAreaWithOneWildcard gear;
 
     /*
      * Wildcard Buffers
      */
+    static const uint16_t BATT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar battBuffer[BATT_SIZE];
+    static const uint16_t ENGTMP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar engtmpBuffer[ENGTMP_SIZE];
+    static const uint16_t LAMBDA_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar lambdaBuffer[LAMBDA_SIZE];
     static const uint16_t TPS_SIZE = 10;
     touchgfx::Unicode::UnicodeChar tpsBuffer[TPS_SIZE];
     static const uint16_t RPM_SIZE = 10;
     touchgfx::Unicode::UnicodeChar rpmBuffer[RPM_SIZE];
+    static const uint16_t GNDSPD_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar gndspdBuffer[GNDSPD_SIZE];
+    static const uint16_t GEAR_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar gearBuffer[GEAR_SIZE];
 
 private:
 
