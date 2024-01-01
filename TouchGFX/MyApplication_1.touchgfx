@@ -17,7 +17,7 @@
             "X": 679,
             "Y": 447,
             "Width": 93,
-            "Height": 20,
+            "Height": 24,
             "TextId": "batt",
             "TextRotation": "0",
             "Color": {
@@ -38,7 +38,7 @@
             "X": 679,
             "Y": 413,
             "Width": 92,
-            "Height": 20,
+            "Height": 24,
             "TextId": "engtmp",
             "TextRotation": "0",
             "Color": {
@@ -59,7 +59,7 @@
             "X": 679,
             "Y": 379,
             "Width": 78,
-            "Height": 20,
+            "Height": 24,
             "TextId": "lambda1",
             "TextRotation": "0",
             "Color": {
@@ -80,7 +80,7 @@
             "X": 679,
             "Y": 348,
             "Width": 99,
-            "Height": 20,
+            "Height": 24,
             "TextId": "tps",
             "TextRotation": "0",
             "Color": {
@@ -163,8 +163,8 @@
           {
             "Type": "Image",
             "Name": "image1",
-            "X": 7,
-            "Y": 368,
+            "X": 6,
+            "Y": 357,
             "Width": 350,
             "Height": 112,
             "RelativeFilename": "zr112.png"
@@ -175,7 +175,7 @@
             "X": 194,
             "Y": 95,
             "Width": 75,
-            "Height": 41,
+            "Height": 49,
             "TextId": "gndspd",
             "TextRotation": "0",
             "Color": {
@@ -196,7 +196,7 @@
             "X": 532,
             "Y": 95,
             "Width": 50,
-            "Height": 41,
+            "Height": 49,
             "TextId": "gear",
             "TextRotation": "0",
             "Color": {
