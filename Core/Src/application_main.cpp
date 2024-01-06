@@ -40,12 +40,33 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);
 
-
+// shift light functionality evaluated each loop
         //  When RPM is greater than 8000, turn on the blue light
         if (8000 <= (data_store::instance()->get_rpm())) {
             HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
         } else {
             HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+            }
+
+        //  When RPM is greater than 11000, turn on the green light
+        if (11000 <= (data_store::instance()->get_rpm())) {
+            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_11, GPIO_PIN_SET);
+        } else {
+            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_11, GPIO_PIN_RESET);
+            }
+
+        //  When RPM is greater than 13000, turn on the yellow light
+        if (13000 <= (data_store::instance()->get_rpm())) {
+            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_10, GPIO_PIN_SET);
+        } else {
+            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_10, GPIO_PIN_RESET);
+            }
+
+        //  When RPM is greater than 14000, turn on the orange light
+        if (14000 <= (data_store::instance()->get_rpm())) {
+            HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+        } else {
+            HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
             }
             
         
