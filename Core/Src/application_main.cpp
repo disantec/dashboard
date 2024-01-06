@@ -40,6 +40,8 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);
 
+
+        //  When RPM is greater than 8000, turn on the blue light
         if (8000 <= (data_store::instance()->get_rpm())) {
             HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
         } else {
