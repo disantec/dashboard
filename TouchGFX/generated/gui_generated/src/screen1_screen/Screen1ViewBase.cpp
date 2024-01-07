@@ -78,7 +78,7 @@ Screen1ViewBase::Screen1ViewBase()
     gear_label.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VPGR));
     add(gear_label);
 
-    image1.setXY(7, 368);
+    image1.setXY(6, 357);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_ZR112_ID));
     add(image1);
 
