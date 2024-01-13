@@ -14,11 +14,12 @@ extern "C" {
 /// @param hcan Pointer to the desired CAN peripheral's handler.
 void application_main(void *arg, CAN_HandleTypeDef *hcan)
 {
-    can_parser *p_can_parser = can_parser::instance(); ///< Pointer to the instance of can_parser.
-    test_mode *p_test_mode = test_mode::instance();    ///< Pointer to the instance of test_mode.
-
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
+
+    data_store *p_data_store = data_store::instance();  ///< Pointer to data_store instance.
+    can_parser *p_can_parser = can_parser::instance();  ///< Pointer to can_parser instance.
+    test_mode  *p_test_mode = test_mode::instance();    ///< Pointer to test_mode instance..
 
     // Begin infinite "main" loop of program. Execution is not intended to move beyond this.
     while (true) 
@@ -42,37 +43,20 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);
 
-// shift light functionality evaluated each loop
-        //  When RPM is greater than 8000, turn on the blue light
-        if (8000 <= (data_store::instance()->get_rpm())) {
-            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
-        } else {
-            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
-            }
+        // Shift light functionality evaluated each loop.
+        uint32_t rpm = p_data_store->get_rpm();
 
-        //  When RPM is greater than 11000, turn on the green light
-        if (11000 <= (data_store::instance()->get_rpm())) {
-            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_11, GPIO_PIN_SET);
-        } else {
-            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_11, GPIO_PIN_RESET);
-            }
+        //  When RPM is greater than 8000, turn on the blue light
+        HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, 8000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
+        //  When RPM is greater than 11000, turn on the other blue light
+        HAL_GPIO_WritePin (GPIOG, GPIO_PIN_11, 11000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 
         //  When RPM is greater than 13000, turn on the yellow light
-        if (13000 <= (data_store::instance()->get_rpm())) {
-            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_10, GPIO_PIN_SET);
-        } else {
-            HAL_GPIO_WritePin (GPIOG, GPIO_PIN_10, GPIO_PIN_RESET);
-            }
+        HAL_GPIO_WritePin (GPIOG, GPIO_PIN_10, 13000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 
         //  When RPM is greater than 14000, turn on the orange light
-        if (14000 <= (data_store::instance()->get_rpm())) {
-            HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
-        } else {
-            HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-            }
-            
-        
-        
+        HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
     }
 }
 
