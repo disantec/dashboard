@@ -45,6 +45,15 @@ public:
     void set_batt(uint32_t batt) { batt_ = batt; }
     uint32_t get_batt() { return batt_; }
 
+    void set_xaccel(uint32_t xaccel) { xaccel_ = xaccel; }
+    uint32_t get_xaccel() { return set_xaccel; }
+
+    void set_yaccel(uint32_t yaccel) { yaccel_ = yaccel; }
+    uint32_t get_yaccel() { return set_yaccel; }
+    
+    void set_zaccel(uint32_t zaccel) { zaccel_ = zaccel; }
+    uint32_t get_zaccel() { return set_zaccel; }
+
 private:
     data_store() { /* Default Constructor */ }
 
@@ -61,6 +70,9 @@ private:
     uint32_t map_ = 0.0;
     uint32_t bap_ = 0.0;
     uint32_t batt_ = 0.0;
+    uint32_t xaccel_ = 0.0;
+    uint32_t yaccel_ = 0.0;
+    uint32_t zaccel_ = 0.0;
     
 
 
