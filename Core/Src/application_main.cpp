@@ -1,11 +1,8 @@
-//#define TEST_MODE
-
 #include "stm32f4xx_hal.h"
 #include "can_parser.h"
-
-#ifdef TEST_MODE
 #include "test_mode.h".
-#endif
+
+//#define TEST_MODE // Uncomment when test mode is desired.
 
 #ifdef __cplusplus
 extern "C" {

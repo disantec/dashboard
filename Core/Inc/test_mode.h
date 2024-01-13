@@ -18,11 +18,22 @@ public:
     bool get_rx_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
 
 private:
-    test_mode() { /* Intentionally empty */ }
+    uint8_t MESSAGE_BURST_COUNT = 2;
+    uint8_t MESSAGE_BURST_DELAY = 1;
+
+    test_mode() 
+    {
+        burst_active_ = true;
+        burst_count_ = 0;
+    }
 
     static test_mode *p_instance_;
 
     test_mode *p_test_mode_ = nullptr;
+
+    bool burst_active_;
+
+    uint8_t burst_count_;
 };
 
 #endif
