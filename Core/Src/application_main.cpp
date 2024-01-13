@@ -40,7 +40,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         }
         #endif
 
-        // Shift light functionality evaluated each loop.
+        // Shift light functionality evaluated each loop. Cache the rpm from the data store prior to processing.
         uint32_t rpm = p_data_store->get_rpm();
 
         //  When RPM is greater than 8000, turn on the blue light
