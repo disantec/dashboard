@@ -8,7 +8,7 @@ extern "C" {
 // #define TEST_MODE
 
 /// @brief Application C++ entry point. Responsible for CAN monitoring and delegation of processing.
-///
+/// 
 /// @param arg  Applicable args from C invocation. Unused
 /// @param hcan Pointer to the desired CAN peripheral's handler.
 void application_main(void *arg, CAN_HandleTypeDef *hcan)
@@ -67,10 +67,22 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
             HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
         } else {
             HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-            }
-            
-        
-        
+            }  
+
+
+// Check if i2c device is connected and ready 
+
+        // HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady
+
+        // (&hi2c1, (1101000) << 1 + 0, 1, 100);
+
+        //     if(ret == HAL_OK)
+
+        //         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
+
+        //     else
+
+        //         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_6, GPIO_PIN_SET);   
     }
 }
 
