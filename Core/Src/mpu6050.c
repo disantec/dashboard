@@ -2,6 +2,7 @@
 #include <main.h>
 #include <stdio.h>
 
+
 extern I2C_HandleTypeDef hi2c1;
 
 void mpu6050_init()

@@ -28,6 +28,7 @@
 #include "stm32469i_discovery_sdram.h"
 #include "stm32469i_discovery_qspi.h"
 #include "mpu6050.h"
+#include "stdio.h"
 
 /* USER CODE END Includes */
 
@@ -43,7 +44,7 @@
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
+/* USER CODE BEGIN PM */ 
 
 /* USER CODE END PM */
 
