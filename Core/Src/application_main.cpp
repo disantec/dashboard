@@ -1,5 +1,6 @@
 #include "stm32f4xx_hal.h"
 #include "can_parser.h"
+#include "test_mode.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,6 +15,7 @@ extern "C" {
 void application_main(void *arg, CAN_HandleTypeDef *hcan)
 {
     can_parser *p_can_parser = can_parser::instance(); ///< Pointer to the instance of can_parser.
+    test_mode *p_test_mode = test_mode::instance();    ///< Pointer to the instance of test_mode.
 
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
