@@ -46,13 +46,13 @@ public:
     uint32_t get_batt() { return batt_; }
 
     void set_xaccel(uint32_t xaccel) { xaccel_ = xaccel; }
-    uint32_t get_xaccel() { return set_xaccel; }
+    uint32_t get_xaccel() { return xaccel_; }
 
     void set_yaccel(uint32_t yaccel) { yaccel_ = yaccel; }
-    uint32_t get_yaccel() { return set_yaccel; }
+    uint32_t get_yaccel() { return yaccel_; }
     
     void set_zaccel(uint32_t zaccel) { zaccel_ = zaccel; }
-    uint32_t get_zaccel() { return set_zaccel; }
+    uint32_t get_zaccel() { return zaccel_; }
 
 private:
     data_store() { /* Default Constructor */ }
