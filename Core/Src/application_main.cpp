@@ -1,12 +1,15 @@
+//#define TEST_MODE
+
 #include "stm32f4xx_hal.h"
 #include "can_parser.h"
-#include "test_mode.h"
+
+#ifdef TEST_MODE
+#include "test_mode.h".
+#endif
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-// #define TEST_MODE
 
 /// @brief Application C++ entry point. Responsible for CAN monitoring and delegation of processing.
 ///
@@ -19,26 +22,24 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
     data_store *p_data_store = data_store::instance();  ///< Pointer to data_store instance.
     can_parser *p_can_parser = can_parser::instance();  ///< Pointer to can_parser instance.
-    test_mode  *p_test_mode = test_mode::instance();    ///< Pointer to test_mode instance..
+
+    #ifdef TEST_MODE
+    test_mode  *p_test_mode = test_mode::instance();    ///< Pointer to test_mode instance.
+    #endif
 
     // Begin infinite "main" loop of program. Execution is not intended to move beyond this.
     while (true) 
     {
-        #ifdef TEST_MODE
-        rxData[0] = 0x02;
-        rxData[1] = 0x01;
-        rxData[2] = 0x09;
-        rxData[3] = 0x08;
-
-        p_can_parser->process(0x5F0, rxData);
-        #else
         // For each main loop, scoop up all available CAN messages that have come in and forward them off for processing.
         // This processing loop will continue so long as messages are available in the FIFO.
+        #ifdef TEST_MODE
+        while (p_test_mode->get_rx_message(&rxHeader, rxData))
+        #else
         while (0 != HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) && HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rxHeader, rxData))
+        #endif
         {
             p_can_parser->process(rxHeader.StdId, rxData);       
         }
-        #endif
 
         // Shift light functionality evaluated each loop. Cache the rpm from the data store prior to processing.
         uint32_t rpm = p_data_store->get_rpm();
