@@ -40,9 +40,6 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         }
         #endif
 
-        // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
-        HAL_Delay(1);
-
         // Shift light functionality evaluated each loop.
         uint32_t rpm = p_data_store->get_rpm();
 
@@ -57,6 +54,9 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
         //  When RPM is greater than 14000, turn on the orange light
         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
+        // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
+        HAL_Delay(1);
     }
 }
 
