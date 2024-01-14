@@ -1,5 +1,6 @@
 #include "stm32f4xx_hal.h"
 #include "can_parser.h"
+#include "mpu_6050.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -11,9 +12,10 @@ extern "C" {
 /// 
 /// @param arg  Applicable args from C invocation. Unused
 /// @param hcan Pointer to the desired CAN peripheral's handler.
-void application_main(void *arg, CAN_HandleTypeDef *hcan)
+void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c1; )
 {
     can_parser *p_can_parser = can_parser::instance(); ///< Pointer to the instance of can_parser.
+    mpu_6050 *p_mpu_6050 = mpu_6050::instance();
 
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
@@ -39,6 +41,11 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);
+
+
+// i2c processing
+
+        mpu_6050->process(rxHeader.StdId, rxData);    
 
 // shift light functionality evaluated each loop
         //  When RPM is greater than 8000, turn on the blue light
@@ -68,21 +75,6 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         } else {
             HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
             }  
-
-
-// Check if i2c device is connected and ready 
-
-        // HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady
-
-        // (&hi2c1, (1101000) << 1 + 0, 1, 100);
-
-        //     if(ret == HAL_OK)
-
-        //         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
-
-        //     else
-
-        //         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_6, GPIO_PIN_SET);   
     }
 }
 

@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "initializer_list": "c",
+        "data_store.h": "c"
     }
 }
