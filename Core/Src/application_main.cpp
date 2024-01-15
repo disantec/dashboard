@@ -12,7 +12,9 @@ extern "C" {
 /// 
 /// @param arg  Applicable args from C invocation. Unused
 /// @param hcan Pointer to the desired CAN peripheral's handler.
-void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c1; )
+/// @param hi2c1 POinter to the desired I2C peripheral's handler.
+
+void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c1)
 {
     can_parser *p_can_parser = can_parser::instance(); ///< Pointer to the instance of can_parser.
     mpu_6050 *p_mpu_6050 = mpu_6050::instance();
@@ -45,7 +47,7 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2
 
 // i2c processing
 
-        mpu_6050->process(rxHeader.StdId, rxData);    
+            p_mpu_6050->process(rxHeader.StdId, rxData);    
 
 // shift light functionality evaluated each loop
         //  When RPM is greater than 8000, turn on the blue light

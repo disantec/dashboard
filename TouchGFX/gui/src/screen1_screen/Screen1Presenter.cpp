@@ -58,3 +58,9 @@ void Screen1Presenter::setBATT(int val)
 	view.setBATT (val * .01);
 
 }
+
+void Screen1Presenter::setXACCEL(int val)
+{
+	view.setXACCEL (val * .01);
+
+}

@@ -97,8 +97,17 @@ Screen1ViewBase::Screen1ViewBase()
     Unicode::snprintf(gearBuffer, GEAR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_83V3).getText());
     gear.setWildcard(gearBuffer);
     gear.resizeToCurrentText();
-    gear.setTypedText(touchgfx::TypedText(T_GEAR));
+    gear.setTypedText(touchgfx::TypedText(T_XACCEL));
     add(gear);
+
+    xaccel.setXY(375, 18);
+    xaccel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    xaccel.setLinespacing(0);
+    Unicode::snprintf(xaccelBuffer, XACCEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VDUL).getText());
+    xaccel.setWildcard(xaccelBuffer);
+    xaccel.resizeToCurrentText();
+    xaccel.setTypedText(touchgfx::TypedText(T_XACCEL));
+    add(xaccel);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

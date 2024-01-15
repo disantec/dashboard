@@ -27,8 +27,6 @@
 #include "../Components/nt35510/nt35510.h"
 #include "stm32469i_discovery_sdram.h"
 #include "stm32469i_discovery_qspi.h"
-#include "mpu6050.h"
-#include "stdio.h"
 
 /* USER CODE END Includes */
 
@@ -154,8 +152,6 @@ int main(void)
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
-
-  mpu6050_init();
 
   /* USER CODE END 2 */
 
