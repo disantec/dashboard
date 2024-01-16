@@ -28,23 +28,39 @@ bool test_mode::get_rx_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
 
 void test_mode::populate_message(uint32_t id, uint8_t data[])
 {
+    uint16_t data_a = 0x0000;
+    uint16_t data_b = 0x0000;
+    uint16_t data_c = 0x0000;
+    uint16_t data_d = 0x0000;
+
     switch(id)
     {
         case 0x5F0:
-            can_data_pack(p_data_store_->get_rpm() + 1,     &data[0]);
-            can_data_pack(p_data_store_->get_tps() + 1,     &data[2]);
-            can_data_pack(p_data_store_->get_gndspd() + 1,  &data[4]);
-            can_data_pack(p_data_store_->get_engtmp() + 1,  &data[6]);
+            data_a = p_data_store_->get_rpm();
+            data_b = p_data_store_->get_tps();
+            data_c = p_data_store_->get_gndspd();
+            data_d = p_data_store_->get_engtmp();
         break;
 
         case 0x5F1:
+            data_a = p_data_store_->get_inltmp();
+            data_b = p_data_store_->get_gear();
+            data_c = p_data_store_->get_lambda();
+            data_d = p_data_store_->get_map();
         break;
 
         case 0x5F2:
+            data_a = p_data_store_->get_bap();
+            data_b = p_data_store_->get_batt();
         break;
 
         default:
             // Do nothing.
         break;
     }
+
+    can_data_pack(++data_a, &data[0]);
+    can_data_pack(++data_b, &data[2]);
+    can_data_pack(++data_c, &data[4]);
+    can_data_pack(++data_d, &data[6]);
 }
