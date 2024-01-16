@@ -32,9 +32,14 @@ private:
         burst_count_ = 0;
     }
 
-    void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
+    void can_data_pack(uint16_t store_data, uint8_t *p_data)
+    {
+        *p_data = store_data >> 8;
+        ++p_data;
+        *p_data = store_data;
+    }
 
-    void can_data_pack(uint16_t store_data, uint8_t *p_data);
+    void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
 
     static test_mode *p_instance_;
 
