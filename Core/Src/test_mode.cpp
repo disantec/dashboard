@@ -11,9 +11,7 @@ bool test_mode::get_rx_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
     {
         if (MESSAGE_BURST_COUNT > burst_count_)
         {
-            pHeader->StdId = 0x5F0;
-            data[0] = 0x12;
-            data[1] = 0x34;
+            populate_message(pHeader, data);
             burst_count_++;
             return true;
         }
@@ -38,4 +36,25 @@ bool test_mode::get_rx_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
             return get_rx_message(pHeader, data);
         }
     }
+}
+
+void test_mode::populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
+{
+    pHeader->StdId = 0x5F0;
+
+    uint32_t temp = p_data_store_->get_rpm();
+    data[0] = temp >> 8;
+    data[1] = temp;
+
+    temp = p_data_store_->get_tps();
+    data[2] = temp >> 8;
+    data[3] = temp;
+
+    temp = p_data_store_->get_gndspd();
+    data[4] = temp >> 8;
+    data[5] = temp;
+
+    temp = p_data_store_->get_engtmp();
+    data[6] = temp >> 8;
+    data[7] = temp;
 }

@@ -50,21 +50,16 @@ private:
 
     static data_store *p_instance_;
     
-    //#TODO: maybe make rpm_ an int
-    uint32_t rpm_ = 0;
-    uint32_t tps_ = 0.0;
-    uint32_t gndspd_ = 0.0;
-    uint32_t engtmp_ = 0.0;
-    uint32_t inltmp_ = 0.0;
-    uint32_t gear_ = 1;
-    uint32_t lambda_ = 0.0;
-    uint32_t map_ = 0.0;
-    uint32_t bap_ = 0.0;
-    uint32_t batt_ = 0.0;
-    
-
-
-    uint32_t test = 0;
+    uint32_t rpm_       = 0;
+    uint32_t tps_       = 0;
+    uint32_t gndspd_    = 0;
+    uint32_t engtmp_    = 0;
+    uint32_t inltmp_    = 0;
+    uint32_t gear_      = 0;
+    uint32_t lambda_    = 0;
+    uint32_t map_       = 0;
+    uint32_t bap_       = 0;
+    uint32_t batt_      = 0;
 };
 
 #endif

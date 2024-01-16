@@ -4,6 +4,7 @@
 #define TEST_MODE_H
 
 #include "stm32f4xx_hal.h"
+#include "data_store.h"
 
 class test_mode 
 {
@@ -23,13 +24,19 @@ private:
 
     test_mode() 
     {
+        p_data_store_ = data_store::instance();
+
         burst_active_ = true;
         burst_count_ = 0;
     }
 
+    void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
+
     static test_mode *p_instance_;
 
     test_mode *p_test_mode_ = nullptr;
+
+    data_store *p_data_store_ = nullptr;
 
     bool burst_active_;
 
