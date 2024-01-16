@@ -21,8 +21,10 @@ public:
     bool get_rx_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
 
 private:
-    uint8_t MESSAGE_BURST_COUNT = 2;
-    uint8_t MESSAGE_BURST_DELAY = 1;
+    static const uint8_t MESSAGE_BURST_COUNT = 3;
+    static const uint8_t MESSAGE_BURST_DELAY = 1;
+
+    const uint32_t MESSAGE_LIST[MESSAGE_BURST_COUNT] = {0x5F0, 0x5F1, 0x5F2};
 
     static test_mode *p_instance_;
 
@@ -47,7 +49,7 @@ private:
         *p_data = store_data;
     }
 
-    void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
+    void populate_message(uint32_t id, uint8_t data[]);
 };
 
 #endif
