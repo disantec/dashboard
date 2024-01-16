@@ -13,9 +13,9 @@ extern "C" {
 /// 
 /// @param arg  Applicable args from C invocation. Unused
 /// @param hcan Pointer to the desired CAN peripheral's handler.
-/// @param hi2c1 POinter to the desired I2C peripheral's handler.
+/// @param hi2c1 Pointer to the desired I2C peripheral's handler.
 
-void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c1)
+void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c)
 {
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
@@ -58,7 +58,11 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2
         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 
         // i2c processing
-        p_mpu_6050->process(rxHeader.StdId, rxData);  
+        if (!p_mpu_6050->init(hi2c))
+        {
+            p_data_store->set_rpm(65535);
+        }
+        //p_mpu_6050->process(rxHeader.StdId, rxData);  
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);  

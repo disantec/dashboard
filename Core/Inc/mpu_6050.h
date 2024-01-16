@@ -3,6 +3,7 @@
 #ifndef MPU6050_H_
 #define MPU6050_H_
 
+#include "stm32f4xx_hal.h"
 #include "data_store.h"
 
 #define DEVICE_ADDRESS 0x68
@@ -22,7 +23,6 @@
 #define REG_USR_CTRL     107
 #define REG_DATA         59
 
-
 class mpu_6050
 {
 public:
@@ -32,6 +32,8 @@ public:
 
         return p_instance_;
     }
+
+    bool init(I2C_HandleTypeDef *hi2c);
 
     void process(uint32_t id, uint8_t data[]);
 
