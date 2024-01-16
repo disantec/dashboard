@@ -26,8 +26,8 @@ bool test_mode::get_rx_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
     {
         if (MESSAGE_BURST_DELAY > burst_count_)
         {
-            return false;
             burst_count_++;
+            return false;
         }
         else
         {
@@ -42,10 +42,10 @@ void test_mode::populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
 {
     pHeader->StdId = 0x5F0;
 
-    can_data_pack(p_data_store_->get_rpm(), &data[0]);
-    can_data_pack(p_data_store_->get_tps(), &data[2]);
-    can_data_pack(p_data_store_->get_gndspd(), &data[4]);
-    can_data_pack(p_data_store_->get_engtmp(), &data[6]);
+    can_data_pack(p_data_store_->get_rpm() + 1,     &data[0]);
+    can_data_pack(p_data_store_->get_tps() + 1,     &data[2]);
+    can_data_pack(p_data_store_->get_gndspd() + 1,  &data[4]);
+    can_data_pack(p_data_store_->get_engtmp() + 1,  &data[6]);
 }
 
 void test_mode::can_data_pack(uint32_t store_data, uint8_t *p_data)
