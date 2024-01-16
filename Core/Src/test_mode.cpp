@@ -48,7 +48,7 @@ void test_mode::populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
     can_data_pack(p_data_store_->get_engtmp() + 1,  &data[6]);
 }
 
-void test_mode::can_data_pack(uint32_t store_data, uint8_t *p_data)
+void test_mode::can_data_pack(uint16_t store_data, uint8_t *p_data)
 {
     *p_data = store_data >> 8;
     ++p_data;

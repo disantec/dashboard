@@ -34,7 +34,7 @@ private:
 
     void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
 
-    void can_data_pack(uint32_t store_data, uint8_t *p_data);
+    void can_data_pack(uint16_t store_data, uint8_t *p_data);
 
     static test_mode *p_instance_;
 
