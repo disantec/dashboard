@@ -69,6 +69,8 @@ private:
     uint16_t map_       = 0;
     uint16_t bap_       = 0;
     uint16_t batt_      = 0;
+
+    ///@todo Determine data type
     uint32_t xaccel_    = 0;
     uint32_t yaccel_    = 0;
     uint32_t zaccel_    = 0;
