@@ -42,7 +42,10 @@ void test_mode::populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
 {
     pHeader->StdId = 0x5F0;
 
-    uint32_t temp = p_data_store_->get_rpm();
+    data_store_pack(p_data_store_->get_rpm() + 1, &data[0]);
+
+
+    /*uint32_t temp = p_data_store_->get_rpm();
     data[0] = temp >> 8;
     data[1] = temp;
 
@@ -57,4 +60,10 @@ void test_mode::populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[])
     temp = p_data_store_->get_engtmp();
     data[6] = temp >> 8;
     data[7] = temp;
+    */
+}
+
+void test_mode::data_store_pack(uint32_t store_data, uint8_t *p_data)
+{
+
 }

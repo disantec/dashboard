@@ -3,6 +3,8 @@
 #ifndef TEST_MODE_H
 #define TEST_MODE_H
 
+#include <stdint.h>
+
 #include "stm32f4xx_hal.h"
 #include "data_store.h"
 
@@ -31,6 +33,8 @@ private:
     }
 
     void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
+
+    void data_store_pack(uint32_t store_data, uint8_t *p_data);
 
     static test_mode *p_instance_;
 
