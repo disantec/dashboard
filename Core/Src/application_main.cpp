@@ -2,7 +2,7 @@
 #include "can_parser.h"
 #include "test_mode.h".
 
-#define TEST_MODE // Uncomment when test mode is desired.
+//#define TEST_MODE // Uncomment when test mode is desired.
 
 #ifdef __cplusplus
 extern "C" {
