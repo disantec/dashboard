@@ -50,10 +50,10 @@ private:
 
     static data_store *p_instance_;
     
-    uint32_t rpm_       = 0;
-    uint32_t tps_       = 0;
-    uint32_t gndspd_    = 0;
-    uint32_t engtmp_    = 0;
+    uint32_t rpm_       = 12345;
+    uint32_t tps_       = 50;
+    uint32_t gndspd_    = 60;
+    uint32_t engtmp_    = 80;
     uint32_t inltmp_    = 0;
     uint32_t gear_      = 0;
     uint32_t lambda_    = 0;
