@@ -24,6 +24,14 @@ private:
     uint8_t MESSAGE_BURST_COUNT = 2;
     uint8_t MESSAGE_BURST_DELAY = 1;
 
+    static test_mode *p_instance_;
+
+    test_mode *p_test_mode_ = nullptr;
+    data_store *p_data_store_ = nullptr;
+
+    bool burst_active_;
+    uint8_t burst_count_;
+
     test_mode() 
     {
         p_data_store_ = data_store::instance();
@@ -40,16 +48,6 @@ private:
     }
 
     void populate_message(CAN_RxHeaderTypeDef *pHeader, uint8_t data[]);
-
-    static test_mode *p_instance_;
-
-    test_mode *p_test_mode_ = nullptr;
-
-    data_store *p_data_store_ = nullptr;
-
-    bool burst_active_;
-
-    uint8_t burst_count_;
 };
 
 #endif
