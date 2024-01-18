@@ -225,7 +225,12 @@ board_c_files := \
     $(Drivers_path)/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.c \
     $(Drivers_path)/BSP/STM32469I-Discovery/stm32469i_discovery_ts.c \
     $(Drivers_path)/BSP/Components/ft6x06/ft6x06.c \
-    $(Drivers_path)/BSP/Components/nt35510/nt35510.c
+    $(Drivers_path)/BSP/Components/nt35510/nt35510.c \
+	FATFS/App/fatfs.c \
+	FATFS/Target/sd_diskio.c \
+	FATFS/Target/fatfs_platform.c \
+	FATFS/Target/bsp_driver_sd.c \
+	Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
 
 board_cpp_files :=
 
@@ -236,7 +241,10 @@ board_include_paths := \
     Drivers/BSP/Components/ft6x06 \
     Drivers/BSP/Components/nt35510 \
     Drivers/BSP/Components/n25q128a \
-    Drivers/BSP/STM32469I-Discovery
+    Drivers/BSP/STM32469I-Discovery \
+	FATFS/App \
+	FATFS/Target \
+	Middlewares/Third_Party/FatFs/src
 
 asm_source_files := $(makefile_path_relative)/startup_stm32f469xx.s
 

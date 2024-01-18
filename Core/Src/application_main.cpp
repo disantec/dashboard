@@ -1,6 +1,6 @@
 #include "stm32f4xx_hal.h"
 #include "can_parser.h"
-#include "test_mode.h".
+#include "test_mode.h"
 
 //#define TEST_MODE // Uncomment when test mode is desired.
 
