@@ -1,6 +1,7 @@
 #include "stm32f4xx_hal.h"
 #include "can_parser.h"
 #include "test_mode.h"
+#include "bsp_driver_sd.h"
 
 //#define TEST_MODE // Uncomment when test mode is desired.
 
@@ -52,6 +53,9 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
 
         //  When RPM is greater than 14000, turn on the orange light
         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
+
+        ///# Hijacks RPM to test sd card presence. NOT SUITABLE FOR ACTUAL USE.
+        p_data_store->set_rpm(BSP_SD_IsDetected());
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);
