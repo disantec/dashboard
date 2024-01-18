@@ -44,9 +44,8 @@ private:
 
     void can_data_pack(uint16_t store_data, uint8_t *p_data)
     {
-        *p_data = store_data >> 8;
-        ++p_data;
-        *p_data = store_data;
+        *p_data     = store_data >> 8;
+        *(++p_data) = store_data;
     }
 
     void populate_message(uint32_t id, uint8_t data[]);
