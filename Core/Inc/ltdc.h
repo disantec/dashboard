@@ -36,8 +36,8 @@ extern "C" {
 extern LTDC_HandleTypeDef hltdc;
 
 /* USER CODE BEGIN Private defines */
+/* DISPLAY */
 #define LCD_ORIENTATION_LANDSCAPE 0x01
-
 /* USER CODE END Private defines */
 
 void MX_LTDC_Init(void);
