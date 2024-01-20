@@ -45,15 +45,15 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t BATT_SIZE = 5;
+    static const uint16_t BATT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar battBuffer[BATT_SIZE];
     static const uint16_t ENGTMP_SIZE = 10;
     touchgfx::Unicode::UnicodeChar engtmpBuffer[ENGTMP_SIZE];
-    static const uint16_t LAMBDA_SIZE = 5;
+    static const uint16_t LAMBDA_SIZE = 10;
     touchgfx::Unicode::UnicodeChar lambdaBuffer[LAMBDA_SIZE];
     static const uint16_t TPS_SIZE = 10;
     touchgfx::Unicode::UnicodeChar tpsBuffer[TPS_SIZE];
-    static const uint16_t RPM_SIZE = 5;
+    static const uint16_t RPM_SIZE = 10;
     touchgfx::Unicode::UnicodeChar rpmBuffer[RPM_SIZE];
     static const uint16_t GNDSPD_SIZE = 10;
     touchgfx::Unicode::UnicodeChar gndspdBuffer[GNDSPD_SIZE];
