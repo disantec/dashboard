@@ -1,11 +1,11 @@
 // test_mode.h
 
-#ifndef TEST_MODE_H
-#define TEST_MODE_H
+#ifndef TESTMODE_H
+#define TESTMODE_H
 
+#include "can.h"
 #include <stdint.h>
 
-#include "stm32f4xx_hal.h"
 #include "data_store.h"
 
 class test_mode 

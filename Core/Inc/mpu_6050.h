@@ -3,7 +3,8 @@
 #ifndef MPU6050_H_
 #define MPU6050_H_
 
-#include "stm32f4xx_hal.h"
+#include "i2c.h"
+
 #include "data_store.h"
 
 #define DEVICE_ADDRESS 0x68
@@ -33,16 +34,29 @@ public:
         return p_instance_;
     }
 
-    bool init(I2C_HandleTypeDef *hi2c);
-
-    void process(uint32_t id, uint8_t data[]);
+    void process();
 
 private:
-    mpu_6050() { p_data_store_ = data_store::instance(); }
-
     static mpu_6050 *p_instance_;
 
     data_store *p_data_store_ = nullptr;
+
+    I2C_HandleTypeDef *p_i2c_ = nullptr;
+
+    mpu_6050() 
+    { 
+        p_data_store_ = data_store::instance();
+
+       ///@todo Find a way to communicate with the imu.
+       if (HAL_OK == HAL_I2C_IsDeviceReady (&hi2c1, (DEVICE_ADDRESS << 1) + 0, 1, 100))
+       {
+            //uint8_t temp_data = 0b00001000;
+            //if (HAL_OK == HAL_I2C_Mem_Write (hi2c, (DEVICE_ADDRESS << 1) + 0 , REG_CONFIG_GYRO, 1, &temp_data, 1, 100))
+            //{
+                p_i2c_ = &hi2c1;
+            //}
+       }
+    }
 };
 
 #endif
