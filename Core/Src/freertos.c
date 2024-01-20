@@ -147,13 +147,9 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
 
-  ///@todo Call upon the main loop here.
+  // Strap on your C++ helmet and fire off into C++ land. This will not return.
+  application_main(argument);
 
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
   /* USER CODE END StartDefaultTask */
 }
 

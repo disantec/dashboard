@@ -1,10 +1,10 @@
 #include "stm32f4xx_hal.h"
-#include "test_mode.h".
+#include "test_mode.h"
 #include "can_parser.h"
 #include "mpu_6050.h"
 #include "sd_logger.h"
 
-//#define TEST_MODE // Uncomment when test mode is desired.
+#define TEST_MODE // Uncomment when test mode is desired.
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,7 +16,7 @@ extern "C" {
 /// @param hcan Pointer to the desired CAN peripheral's handler.
 /// @param hi2c1 Pointer to the desired I2C peripheral's handler.
 
-void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c)
+void application_main(void *arg)//, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c)
 {
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
