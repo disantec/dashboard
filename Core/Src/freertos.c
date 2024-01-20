@@ -148,7 +148,7 @@ void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
 
-  // Strap on your C++ helmet and fire off into C++ land. This will not return.
+  // Strap on your C++ helmet and fire off into C++ land. Never to return.
   application_main(argument);
 
   /* USER CODE END StartDefaultTask */

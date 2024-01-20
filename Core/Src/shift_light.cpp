@@ -4,7 +4,6 @@
 
 shift_light *shift_light::p_instance_ = nullptr;
 
-///@todo Refactor.
 void shift_light::process()
 {
     // Shift light functionality evaluated each loop. Cache the rpm from the data store prior to processing.
