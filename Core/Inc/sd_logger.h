@@ -3,7 +3,6 @@
 #ifndef SDLOGGER_H
 #define SDLOGGER_H
 
-#include "stm32f4xx_hal.h"
 #include "data_store.h"
 
 class sd_logger

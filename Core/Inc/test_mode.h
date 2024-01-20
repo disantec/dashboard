@@ -3,9 +3,9 @@
 #ifndef TESTMODE_H
 #define TESTMODE_H
 
+#include "can.h"
 #include <stdint.h>
 
-#include "stm32f4xx_hal.h"
 #include "data_store.h"
 
 class test_mode 
