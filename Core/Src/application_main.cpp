@@ -60,11 +60,11 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2
         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 
         // i2c processing
-        if (!p_mpu_6050->init(hi2c))
+        /*if (!p_mpu_6050->init(hi2c))
         {
             p_data_store->set_rpm(65535);
         }
-        //p_mpu_6050->process(rxHeader.StdId, rxData);
+        p_mpu_6050->process(rxHeader.StdId, rxData);*/
 
         p_sd_logger->process();
 

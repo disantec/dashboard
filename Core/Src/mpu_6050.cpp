@@ -20,12 +20,12 @@ bool mpu_6050::init(I2C_HandleTypeDef *hi2c)
 
 void mpu_6050::process(uint32_t id, uint8_t data[])
 {
-    switch (id)
+    /*switch (id)
     {
             p_data_store_->set_xaccel((uint32_t)(32));
 
         default:
             // Do nothing.
             break;
-    }
+    }*/
 }
