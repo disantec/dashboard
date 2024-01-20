@@ -197,7 +197,7 @@
             "Y": 95,
             "Width": 50,
             "Height": 49,
-            "TextId": "gear",
+            "TextId": "xaccel",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -207,6 +207,27 @@
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_83V3",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "xaccel",
+            "X": 375,
+            "Y": 18,
+            "Width": 50,
+            "Height": 49,
+            "TextId": "xaccel",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_VDUL",
               "UseBuffer": true,
               "BufferSize": 10
             }

@@ -21,4 +21,5 @@ void Model::tick()
     modelListener->setGEAR (data_store::instance()->get_gear());
     modelListener->setLAMBDA (data_store::instance()->get_lambda());
     modelListener->setBATT (data_store::instance()->get_batt());
+    modelListener->setXACCEL (data_store::instance()->get_xaccel());
 }

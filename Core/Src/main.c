@@ -43,7 +43,7 @@
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
+/* USER CODE BEGIN PM */ 
 
 /* USER CODE END PM */
 
@@ -514,7 +514,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 400000;
+  hi2c1.Init.ClockSpeed = 100000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -890,7 +890,7 @@ void StartDefaultTask(void *argument)
   /* USER CODE BEGIN 5 */
 
   if (HAL_CAN_Start(&hcan2) != HAL_OK) { Error_Handler(); }
-  else                                 { application_main(argument, &hcan2); }
+  else                                 { application_main(argument, &hcan2, &hi2c1); }
 
   /* Infinite loop */
   for(;;)

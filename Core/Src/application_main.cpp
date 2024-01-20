@@ -1,6 +1,7 @@
 #include "stm32f4xx_hal.h"
+#include "test_mode.h".
 #include "can_parser.h"
-#include "test_mode.h"
+#include "mpu_6050.h"
 #include "sd_logger.h"
 
 //#define TEST_MODE // Uncomment when test mode is desired.
@@ -10,17 +11,20 @@ extern "C" {
 #endif
 
 /// @brief Application C++ entry point. Responsible for CAN monitoring and delegation of processing.
-///
+/// 
 /// @param arg  Applicable args from C invocation. Unused
 /// @param hcan Pointer to the desired CAN peripheral's handler.
-void application_main(void *arg, CAN_HandleTypeDef *hcan)
+/// @param hi2c1 Pointer to the desired I2C peripheral's handler.
+
+void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c)
 {
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
 
     data_store *p_data_store = data_store::instance();  ///< Pointer to data_store instance.
     can_parser *p_can_parser = can_parser::instance();  ///< Pointer to can_parser instance.
-    sd_logger  *p_sd_logger = sd_logger::instance();    ///< Pointer to sd_logger instance.
+    mpu_6050   *p_mpu_6050   = mpu_6050::instance();    ///< Pointer to mpu_6050 instance.
+    sd_logger  *p_sd_logger  = sd_logger::instance();   ///< Pointer to sd_logger instance.
 
     #ifdef TEST_MODE
     test_mode  *p_test_mode = test_mode::instance();    ///< Pointer to test_mode instance.
@@ -55,10 +59,17 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan)
         //  When RPM is greater than 14000, turn on the orange light
         HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 
+        // i2c processing
+        if (!p_mpu_6050->init(hi2c))
+        {
+            p_data_store->set_rpm(65535);
+        }
+        //p_mpu_6050->process(rxHeader.StdId, rxData);
+
         p_sd_logger->process();
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
-        HAL_Delay(1);
+        HAL_Delay(1);  
     }
 }
 

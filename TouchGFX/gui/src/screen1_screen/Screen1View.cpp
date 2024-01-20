@@ -56,3 +56,9 @@ void Screen1View::setBATT (int val)
 	Unicode::snprintf(battBuffer, BATT_SIZE, "%d", val);
 	batt.invalidate();
 }
+
+void Screen1View::setXACCEL (int val)
+{
+	Unicode::snprintf(xaccelBuffer, XACCEL_SIZE, "%d", val);
+	xaccel.invalidate();
+}

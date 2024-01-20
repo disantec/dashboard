@@ -34,6 +34,7 @@ public:
     virtual void setGEAR (int val);
     virtual void setLAMBDA (int val);
     virtual void setBATT (int val);
+    virtual void setXACCEL (int val);
 
 private:
     Screen1Presenter();

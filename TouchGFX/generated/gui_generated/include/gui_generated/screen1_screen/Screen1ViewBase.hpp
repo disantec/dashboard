@@ -40,6 +40,7 @@ protected:
     touchgfx::Image image1;
     touchgfx::TextAreaWithOneWildcard gndspd;
     touchgfx::TextAreaWithOneWildcard gear;
+    touchgfx::TextAreaWithOneWildcard xaccel;
 
     /*
      * Wildcard Buffers
@@ -58,6 +59,8 @@ protected:
     touchgfx::Unicode::UnicodeChar gndspdBuffer[GNDSPD_SIZE];
     static const uint16_t GEAR_SIZE = 10;
     touchgfx::Unicode::UnicodeChar gearBuffer[GEAR_SIZE];
+    static const uint16_t XACCEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar xaccelBuffer[XACCEL_SIZE];
 
 private:
 
