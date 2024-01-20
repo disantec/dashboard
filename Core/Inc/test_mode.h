@@ -4,7 +4,6 @@
 #define TESTMODE_H
 
 #include "can.h"
-#include <stdint.h>
 
 #include "data_store.h"
 
