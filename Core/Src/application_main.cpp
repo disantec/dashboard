@@ -4,7 +4,11 @@
 #include "mpu_6050.h"
 #include "sd_logger.h"
 
-#define TEST_MODE // Uncomment when test mode is desired.
+
+///@todo Remove
+#include "can.h"
+
+//#define TEST_MODE // Uncomment when test mode is desired.
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,7 +20,7 @@ extern "C" {
 /// @param hcan Pointer to the desired CAN peripheral's handler.
 /// @param hi2c1 Pointer to the desired I2C peripheral's handler.
 
-void application_main(void *arg)//, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2c)
+void application_main(void *arg)
 {
     CAN_RxHeaderTypeDef   rxHeader;  ///< Incoming CAN message header info.
     uint8_t               rxData[8]; ///< Incoming CAN message data bytes.
@@ -38,7 +42,7 @@ void application_main(void *arg)//, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *
         #ifdef TEST_MODE
         while (p_test_mode->get_rx_message(&rxHeader, rxData))
         #else
-        while (0 != HAL_CAN_GetRxFifoFillLevel(hcan, CAN_RX_FIFO0) && HAL_OK == HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rxHeader, rxData))
+        while (0 != HAL_CAN_GetRxFifoFillLevel(&hcan2, CAN_RX_FIFO0) && HAL_OK == HAL_CAN_GetRxMessage(&hcan2, CAN_RX_FIFO0, &rxHeader, rxData))
         #endif
         {
             p_can_parser->process(rxHeader.StdId, rxData);       
