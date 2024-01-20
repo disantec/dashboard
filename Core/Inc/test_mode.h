@@ -27,8 +27,7 @@ private:
     const uint32_t MESSAGE_LIST[MESSAGE_BURST_COUNT] = {0x5F0, 0x5F1, 0x5F2};
 
     static test_mode *p_instance_;
-
-    test_mode *p_test_mode_ = nullptr;
+    
     data_store *p_data_store_ = nullptr;
 
     bool burst_active_;
