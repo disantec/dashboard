@@ -33,12 +33,21 @@ bool sd_logger::detect_insertion_change()
 
 void sd_logger::handle_insertion()
 {
-    // Mount test
-    if(f_mount(p_sd_fs_, p_sd_path_, 0) != FR_OK) { p_data_store_->set_rpm(0); }
-    else { p_data_store_->set_rpm(1000); }
+    uint16_t result = 0;
+
+    if (FR_OK == sd_mount())
+    {
+        result = sd_mkfs() * 1000;
+    }
+    else
+    {
+        result = 21000;
+    }
+
+    p_data_store_->set_rpm(result);
 }
 
 void sd_logger::handle_removal()
 {
-    p_data_store_->set_rpm(0);
+    p_data_store_->set_rpm(20000);
 }

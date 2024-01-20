@@ -31,6 +31,8 @@ private:
 
     bool sd_detected_ = false;
 
+    uint8_t read_buffer[_MAX_SS];
+
     sd_logger() 
     { 
         p_data_store_ = data_store::instance();
@@ -45,6 +47,9 @@ private:
     bool detect_insertion_change();
     void handle_insertion();
     void handle_removal();
+
+    FRESULT sd_mount() { return f_mount(p_sd_fs_, p_sd_path_, 0); }
+    FRESULT sd_mkfs()  { return f_mkfs(p_sd_path_, FM_ANY, 0, read_buffer, sizeof(read_buffer)); } 
 };
 
 #endif
