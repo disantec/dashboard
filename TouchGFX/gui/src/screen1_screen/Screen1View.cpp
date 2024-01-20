@@ -17,7 +17,7 @@ void Screen1View::tearDownScreen()
 
 void Screen1View::setRPM (int val)
 {
-	Unicode::snprintf(rpmBuffer, RPM_SIZE, "%d", val);
+	Unicode::snprintfFloat(rpmBuffer, RPM_SIZE, "%5.2f", val * .001);
 	rpm.invalidate();
 }
 
@@ -47,13 +47,13 @@ void Screen1View::setGEAR (int val)
 
 void Screen1View::setLAMBDA (int val)
 {
-	Unicode::snprintf(lambdaBuffer, LAMBDA_SIZE, "%d", val);
+	Unicode::snprintfFloat(lambdaBuffer, LAMBDA_SIZE, "%5.3f", val);
 	lambda.invalidate();
 }
 
 void Screen1View::setBATT (int val)
 {
-	Unicode::snprintf(battBuffer, BATT_SIZE, "%d", val);
+	Unicode::snprintfFloat(battBuffer, BATT_SIZE, "%5.2f", val);
 	batt.invalidate();
 }
 

@@ -19,5 +19,5 @@ void shift_light::process()
     HAL_GPIO_WritePin (GPIOG, GPIO_PIN_10, 13000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 
     //  When RPM is greater than 14000, turn on the orange light
-    HAL_GPIO_WritePin (GPIOG, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_GPIO_WritePin (GPIOB, GPIO_PIN_1, 14000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
