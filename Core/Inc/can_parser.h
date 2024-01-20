@@ -5,6 +5,8 @@
 
 #include "data_store.h"
 
+#include "can.h"
+
 class can_parser 
 {
 public:
@@ -18,11 +20,17 @@ public:
     void process(uint32_t id, uint8_t data[]);
 
 private:
-    can_parser() { p_data_store_ = data_store::instance(); }
+    can_parser() 
+    { 
+        p_data_store_ = data_store::instance();
+
+        p_can_ = &hcan2;
+    }
 
     static can_parser *p_instance_;
 
     data_store *p_data_store_ = nullptr;
+    CAN_HandleTypeDef *p_can_ = nullptr;
 };
 
 #endif

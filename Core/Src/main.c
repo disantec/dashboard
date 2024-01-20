@@ -115,6 +115,9 @@ int main(void)
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
 
+  // Attempt to start up CAN
+  if (HAL_OK != HAL_CAN_Start(&hcan2)) { Error_Handler(); }
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
