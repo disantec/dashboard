@@ -4,10 +4,11 @@
 
 shift_light *shift_light::p_instance_ = nullptr;
 
+///@todo Refactor.
 void shift_light::process()
 {
     // Shift light functionality evaluated each loop. Cache the rpm from the data store prior to processing.
-    uint32_t rpm = p_data_store_->get_rpm();
+    uint16_t rpm = p_data_store_->get_rpm();
 
     //  When RPM is greater than 8000, turn on the blue light
     HAL_GPIO_WritePin (GPIOG, GPIO_PIN_13, 8000 <= rpm ? GPIO_PIN_SET : GPIO_PIN_RESET);

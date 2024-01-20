@@ -24,14 +24,7 @@ void application_main(void *arg)
     {
         p_can_parser->process();
         p_shift_light->process();
-
-        // i2c processing
-        /*if (!p_mpu_6050->init(hi2c))
-        {
-            p_data_store->set_rpm(65535);
-        }
-        p_mpu_6050->process(rxHeader.StdId, rxData);*/
-
+        p_mpu_6050->process();
         p_sd_logger->process();
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
