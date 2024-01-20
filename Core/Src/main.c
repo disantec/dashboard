@@ -23,6 +23,7 @@
 #include "can.h"
 #include "crc.h"
 #include "dma2d.h"
+#include "dsihost.h"
 #include "fatfs.h"
 #include "i2c.h"
 #include "ltdc.h"
