@@ -1,7 +1,8 @@
 #include "stm32f4xx_hal.h"
+#include "test_mode.h".
 #include "can_parser.h"
 #include "mpu_6050.h"
-#include "test_mode.h".
+#include "sd_logger.h"
 
 //#define TEST_MODE // Uncomment when test mode is desired.
 
@@ -22,7 +23,8 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2
 
     data_store *p_data_store = data_store::instance();  ///< Pointer to data_store instance.
     can_parser *p_can_parser = can_parser::instance();  ///< Pointer to can_parser instance.
-    mpu_6050 *p_mpu_6050     = mpu_6050::instance();    ///< Pointer to mpu_6050 instance.
+    mpu_6050   *p_mpu_6050   = mpu_6050::instance();    ///< Pointer to mpu_6050 instance.
+    sd_logger  *p_sd_logger  = sd_logger::instance();   ///< Pointer to sd_logger instance.
 
     #ifdef TEST_MODE
     test_mode  *p_test_mode = test_mode::instance();    ///< Pointer to test_mode instance.
@@ -62,7 +64,9 @@ void application_main(void *arg, CAN_HandleTypeDef *hcan, I2C_HandleTypeDef *hi2
         {
             p_data_store->set_rpm(65535);
         }
-        //p_mpu_6050->process(rxHeader.StdId, rxData);  
+        //p_mpu_6050->process(rxHeader.StdId, rxData);
+
+        p_sd_logger->process();
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);  

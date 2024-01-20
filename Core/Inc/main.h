@@ -60,6 +60,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define MCU_ACTIVE_Pin GPIO_PIN_12
 #define MCU_ACTIVE_GPIO_Port GPIOG
+#define SD_CARD_DETECT_Pin GPIO_PIN_2
+#define SD_CARD_DETECT_GPIO_Port GPIOG
 #define FRAME_RATE_Pin GPIO_PIN_1
 #define FRAME_RATE_GPIO_Port GPIOA
 #define VSYNC_FREQ_Pin GPIO_PIN_2
