@@ -1,7 +1,7 @@
 // test_mode.h
 
-#ifndef TEST_MODE_H
-#define TEST_MODE_H
+#ifndef TESTMODE_H
+#define TESTMODE_H
 
 #include <stdint.h>
 

@@ -1,7 +1,7 @@
 // sd_logger.h
 
-#ifndef SD_LOGGER_H
-#define SD_LOGGER_H
+#ifndef SDLOGGER_H
+#define SDLOGGER_H
 
 #include "stm32f4xx_hal.h"
 #include "data_store.h"
