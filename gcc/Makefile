@@ -230,7 +230,10 @@ board_c_files := \
 	FATFS/Target/sd_diskio.c \
 	FATFS/Target/fatfs_platform.c \
 	FATFS/Target/bsp_driver_sd.c \
-	Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
+	Middlewares/Third_Party/FatFs/src/ff_gen_drv.c \
+	Middlewares/Third_Party/FatFs/src/ff.c \
+	Middlewares/Third_Party/FatFs/src/diskio.c \
+	Middlewares/Third_Party/FatFs/src/option/syscall.c
 
 board_cpp_files :=
 
@@ -244,7 +247,8 @@ board_include_paths := \
     Drivers/BSP/STM32469I-Discovery \
 	FATFS/App \
 	FATFS/Target \
-	Middlewares/Third_Party/FatFs/src
+	Middlewares/Third_Party/FatFs/src \
+	Middlewares/Third_Party/FatFs/src/option
 
 asm_source_files := $(makefile_path_relative)/startup_stm32f469xx.s
 

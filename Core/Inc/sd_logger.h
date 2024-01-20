@@ -3,6 +3,10 @@
 #ifndef SDLOGGER_H
 #define SDLOGGER_H
 
+#include "ff.h"
+#include "fatfs.h"
+#include "bsp_driver_sd.h"
+
 #include "data_store.h"
 
 class sd_logger
@@ -22,7 +26,25 @@ private:
 
     data_store *p_data_store_ = nullptr;
 
-    sd_logger() { p_data_store_ = data_store::instance(); }
+    FATFS *p_sd_fs_     = nullptr;
+    char  *p_sd_path_   = nullptr;
+
+    bool sd_detected_ = false;
+
+    sd_logger() 
+    { 
+        p_data_store_ = data_store::instance();
+
+        p_sd_fs_    = &SDFatFS;
+        p_sd_path_  = SDPath;
+
+        // Initialize detection state.
+        detect_insertion_change();
+    }
+
+    bool detect_insertion_change();
+    void handle_insertion();
+    void handle_removal();
 };
 
 #endif
