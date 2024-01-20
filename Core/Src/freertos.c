@@ -66,6 +66,7 @@ const osThreadAttr_t TouchGFXTask_attributes = {
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
    extern portBASE_TYPE IdleTaskHook(void* p);
+   void application_main(void *arg);
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
