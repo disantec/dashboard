@@ -37,6 +37,12 @@ public:
     void process();
 
 private:
+    static mpu_6050 *p_instance_;
+
+    data_store *p_data_store_ = nullptr;
+
+    I2C_HandleTypeDef *p_i2c_ = nullptr;
+
     mpu_6050() 
     { 
         p_data_store_ = data_store::instance();
@@ -51,12 +57,6 @@ private:
             //}
        }
     }
-
-    static mpu_6050 *p_instance_;
-
-    data_store *p_data_store_ = nullptr;
-
-    I2C_HandleTypeDef *p_i2c_ = nullptr;
 };
 
 #endif

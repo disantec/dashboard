@@ -26,18 +26,6 @@ public:
     void process();
 
 private:
-    can_parser() 
-    { 
-        p_data_store_ = data_store::instance();
-
-        #ifdef TEST_MODE
-        p_test_mode = test_mode::instance();
-        #else
-        p_can_ = &hcan2;
-        #endif
-        
-    }
-
     static can_parser *p_instance_;
 
     data_store *p_data_store_   = nullptr;    ///< Pointer to data store instance.
@@ -50,6 +38,18 @@ private:
     
     CAN_RxHeaderTypeDef   rxHeader;         ///< Incoming CAN message header info.
     uint8_t               rxData[8];        ///< Incoming CAN message data bytes.
+
+    can_parser() 
+    { 
+        p_data_store_ = data_store::instance();
+
+        #ifdef TEST_MODE
+        p_test_mode = test_mode::instance();
+        #else
+        p_can_ = &hcan2;
+        #endif
+        
+    }
 };
 
 #endif

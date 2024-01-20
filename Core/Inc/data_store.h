@@ -55,8 +55,6 @@ public:
     uint32_t get_zaccel() { return zaccel_; }
 
 private:
-    data_store() { /* Default Constructor */ }
-
     static data_store *p_instance_;
     
     uint16_t rpm_       = 0;
@@ -74,6 +72,8 @@ private:
     uint32_t xaccel_    = 0;
     uint32_t yaccel_    = 0;
     uint32_t zaccel_    = 0;
+
+    data_store() { /* Default Constructor */ }
 };
 
 #endif

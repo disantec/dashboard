@@ -20,14 +20,11 @@ public:
     void process();
 
 private:
-    shift_light() 
-    { 
-        p_data_store_ = data_store::instance();
-    }
-
     static shift_light *p_instance_;
 
     data_store *p_data_store_   = nullptr;    ///< Pointer to data store instance.
+
+    shift_light() { p_data_store_ = data_store::instance(); }
 };
 
 #endif
