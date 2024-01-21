@@ -16,35 +16,39 @@ Screen1ViewBase::Screen1ViewBase()
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(box1);
 
-    batt.setPosition(675, 445, 107, 24);
+    batt.setXY(679, 447);
     batt.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     batt.setLinespacing(0);
     Unicode::snprintf(battBuffer, BATT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_82MB).getText());
     batt.setWildcard(battBuffer);
+    batt.resizeToCurrentText();
     batt.setTypedText(touchgfx::TypedText(T_BATT));
     add(batt);
 
-    engtmp.setPosition(679, 413, 92, 24);
+    engtmp.setXY(679, 413);
     engtmp.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     engtmp.setLinespacing(0);
     Unicode::snprintf(engtmpBuffer, ENGTMP_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_3AXW).getText());
     engtmp.setWildcard(engtmpBuffer);
+    engtmp.resizeToCurrentText();
     engtmp.setTypedText(touchgfx::TypedText(T_ENGTMP));
     add(engtmp);
 
-    lambda.setPosition(675, 380, 93, 24);
+    lambda.setXY(679, 379);
     lambda.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     lambda.setLinespacing(0);
     Unicode::snprintf(lambdaBuffer, LAMBDA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_1CGZ).getText());
     lambda.setWildcard(lambdaBuffer);
+    lambda.resizeToCurrentText();
     lambda.setTypedText(touchgfx::TypedText(T_LAMBDA1));
     add(lambda);
 
-    tps.setPosition(679, 348, 99, 24);
+    tps.setXY(679, 348);
     tps.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     tps.setLinespacing(0);
     Unicode::snprintf(tpsBuffer, TPS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_88RJ).getText());
     tps.setWildcard(tpsBuffer);
+    tps.resizeToCurrentText();
     tps.setTypedText(touchgfx::TypedText(T_TPS));
     add(tps);
 
@@ -87,7 +91,7 @@ Screen1ViewBase::Screen1ViewBase()
     gndspd.setTypedText(touchgfx::TypedText(T_GNDSPD));
     add(gndspd);
 
-    gear.setXY(545, 95);
+    gear.setXY(532, 95);
     gear.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     gear.setLinespacing(0);
     Unicode::snprintf(gearBuffer, GEAR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_83V3).getText());
@@ -96,7 +100,7 @@ Screen1ViewBase::Screen1ViewBase()
     gear.setTypedText(touchgfx::TypedText(T_XACCEL));
     add(gear);
 
-    xaccel.setXY(54, 24);
+    xaccel.setXY(375, 18);
     xaccel.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     xaccel.setLinespacing(0);
     Unicode::snprintf(xaccelBuffer, XACCEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VDUL).getText());
@@ -104,12 +108,6 @@ Screen1ViewBase::Screen1ViewBase()
     xaccel.resizeToCurrentText();
     xaccel.setTypedText(touchgfx::TypedText(T_XACCEL));
     add(xaccel);
-
-    textArea1.setXY(20, 0);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3BQQ));
-    add(textArea1);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -120,12 +118,4 @@ Screen1ViewBase::~Screen1ViewBase()
 void Screen1ViewBase::setupScreen()
 {
 
-}
-
-void Screen1ViewBase::handleTickEvent()
-{
-    //Interaction1
-    //When every N tick execute C++ code
-    //Execute C++ code
-    //sample code
 }

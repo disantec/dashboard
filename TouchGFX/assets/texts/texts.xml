@@ -6,11 +6,8 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_3BQQ" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">X g-force</Translation>
-      </Text>
       <Text Id="__SingleUse_VDUL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">00</Translation>
       </Text>
       <Text Id="gndspd" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -28,7 +25,7 @@
         <Translation Language="GB">Gear</Translation>
       </Text>
       <Text Id="__SingleUse_83V3" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">00</Translation>
       </Text>
       <Text Id="xaccel" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">&lt;value&gt;</Translation>
