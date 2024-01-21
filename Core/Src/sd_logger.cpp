@@ -33,8 +33,6 @@ bool sd_logger::detect_insertion_change()
 
 void sd_logger::handle_insertion()
 {
-    //BSP_SD_Init();
-
     if(f_mount(&SDFatFS, (TCHAR const*)SDPath, 0) != FR_OK)
     {
       p_data_store_->set_rpm(21000);
@@ -51,15 +49,6 @@ void sd_logger::handle_insertion()
             p_data_store_->set_rpm(23000);
         }
     }
-
-    /*if (FR_OK == sd_mount())
-    {
-        p_data_store_->set_rpm(sd_mkfs() * 1000);
-    }
-    else
-    {
-       p_data_store_->set_rpm(sd_mkfs() * 21000);
-    }*/
 }
 
 void sd_logger::handle_removal()
