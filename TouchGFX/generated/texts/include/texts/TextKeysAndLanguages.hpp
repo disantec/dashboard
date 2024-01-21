@@ -12,7 +12,6 @@ enum LANGUAGES
 
 enum TEXTS
 {
-    T___SINGLEUSE_3BQQ,
     T___SINGLEUSE_VDUL,
     T_GNDSPD,
     T___SINGLEUSE_7ZGC,
