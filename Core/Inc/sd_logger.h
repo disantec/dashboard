@@ -37,11 +37,13 @@ private:
     { 
         p_data_store_ = data_store::instance();
 
-        p_sd_fs_    = &SDFatFS;
-        p_sd_path_  = SDPath;
+        //p_sd_fs_    = &SDFatFS;
+        //p_sd_path_  = SDPath;
 
         // Initialize detection state.
-        detect_insertion_change();
+        //detect_insertion_change();
+
+        p_data_store_->set_rpm(retSD * 1000);
     }
 
     bool detect_insertion_change();
