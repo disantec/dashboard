@@ -33,18 +33,32 @@ bool sd_logger::detect_insertion_change()
 
 void sd_logger::handle_insertion()
 {
-    uint16_t result = 0;
-
-    if (FR_OK == sd_mount())
+    if(f_mount(&SDFatFS, (TCHAR const*)SDPath, 0) != FR_OK)
     {
-        result = sd_mkfs() * 1000;
+      /* FatFs Initialization Error */
+      p_data_store_->set_rpm(21000);
     }
     else
     {
-        result = 21000;
+        /*##-3- Create a FAT file system (format) on the logical drive #########*/
+        if(f_mkfs((TCHAR const*)SDPath, FM_ANY, 0, read_buffer, sizeof(read_buffer)) != FR_OK)
+        {     
+            p_data_store_->set_rpm(22000);
+        }
+        else
+        {
+            p_data_store_->set_rpm(23000);
+        }
     }
 
-    p_data_store_->set_rpm(result);
+    /*if (FR_OK == sd_mount())
+    {
+        p_data_store_->set_rpm(sd_mkfs() * 1000);
+    }
+    else
+    {
+       p_data_store_->set_rpm(sd_mkfs() * 21000);
+    }*/
 }
 
 void sd_logger::handle_removal()
