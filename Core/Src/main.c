@@ -22,6 +22,7 @@
 #include "cmsis_os.h"
 #include "can.h"
 #include "crc.h"
+#include "dma.h"
 #include "dma2d.h"
 #include "dsihost.h"
 #include "fatfs.h"
@@ -103,6 +104,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CRC_Init();
   MX_DMA2D_Init();
   MX_DSIHOST_DSI_Init();

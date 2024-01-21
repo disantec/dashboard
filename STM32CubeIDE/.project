@@ -50,6 +50,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Core/Src/crc.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/dma.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Core/Src/dma.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/dma2d.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Core/Src/dma2d.c</locationURI>
