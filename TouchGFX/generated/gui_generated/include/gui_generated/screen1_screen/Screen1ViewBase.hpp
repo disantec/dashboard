@@ -42,6 +42,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard gndspd;
     touchgfx::TextAreaWithOneWildcard gear;
     touchgfx::TextAreaWithOneWildcard xaccel;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

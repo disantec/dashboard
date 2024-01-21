@@ -210,18 +210,38 @@
           {
             "Type": "TextArea",
             "Name": "xaccel",
-            "X": 375,
-            "Y": 18,
-            "Width": 50,
+            "X": 54,
+            "Y": 24,
+            "Width": 25,
             "Height": 41,
             "TextId": "xaccel",
             "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_VDUL",
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 20,
+            "Width": 92,
+            "Height": 24,
+            "TextId": "__SingleUse_3BQQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
