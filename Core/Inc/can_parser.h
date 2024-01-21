@@ -5,7 +5,7 @@
 
 #include "can.h"
 
-#define TEST_MODE // Uncomment when test mode is desired.
+// #define TEST_MODE // Uncomment when test mode is desired.
 
 #ifdef TEST_MODE
 #include "test_mode.h"
