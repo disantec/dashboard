@@ -18,6 +18,7 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
 
 protected:
     FrontendApplication& application() {
@@ -41,6 +42,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard gndspd;
     touchgfx::TextAreaWithOneWildcard gear;
     touchgfx::TextAreaWithOneWildcard xaccel;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

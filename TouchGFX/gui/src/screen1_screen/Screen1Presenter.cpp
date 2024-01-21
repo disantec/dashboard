@@ -49,13 +49,13 @@ void Screen1Presenter::setGEAR (int val)
 
 void Screen1Presenter::setLAMBDA(int val)
 {
-	view.setLAMBDA (val * .001);
+	view.setLAMBDA (val);
 
 }
 
 void Screen1Presenter::setBATT(int val)
 {
-	view.setBATT (val * .01);
+	view.setBATT (val);
 
 }
 
