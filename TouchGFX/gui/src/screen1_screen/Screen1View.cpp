@@ -47,13 +47,13 @@ void Screen1View::setGEAR (int val)
 
 void Screen1View::setLAMBDA (int val)
 {
-	Unicode::snprintfFloat(lambdaBuffer, LAMBDA_SIZE, "%5.3f", val);
+	Unicode::snprintfFloat(lambdaBuffer, LAMBDA_SIZE, "%5.3f", val * .001);
 	lambda.invalidate();
 }
 
 void Screen1View::setBATT (int val)
 {
-	Unicode::snprintfFloat(battBuffer, BATT_SIZE, "%5.2f", val);
+	Unicode::snprintfFloat(battBuffer, BATT_SIZE, "%5.2f", val * .01);
 	batt.invalidate();
 }
 

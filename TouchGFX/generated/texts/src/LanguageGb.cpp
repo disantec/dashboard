@@ -16,7 +16,7 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     14, // T_LAMBDA1: "L   <> "
     32, // T___SINGLEUSE_1CGZ: "000"
     36, // T___SINGLEUSE_VPGR: "Gear"
-    33, // T___SINGLEUSE_83V3: "00"
+    34, // T___SINGLEUSE_83V3: "0"
     28, // T_XACCEL: "<>"
     0,  // T_BATT: "BT <> V"
     32, // T___SINGLEUSE_82MB: "000"

@@ -14,9 +14,9 @@
           {
             "Type": "TextArea",
             "Name": "batt",
-            "X": 679,
-            "Y": 447,
-            "Width": 93,
+            "X": 675,
+            "Y": 445,
+            "Width": 107,
             "Height": 24,
             "TextId": "batt",
             "TextRotation": "0",
@@ -25,11 +25,10 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_82MB",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 5
             }
           },
           {
@@ -46,7 +45,6 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_3AXW",
               "UseBuffer": true,
@@ -56,9 +54,9 @@
           {
             "Type": "TextArea",
             "Name": "lambda",
-            "X": 679,
-            "Y": 379,
-            "Width": 78,
+            "X": 675,
+            "Y": 380,
+            "Width": 93,
             "Height": 24,
             "TextId": "lambda1",
             "TextRotation": "0",
@@ -67,11 +65,10 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_1CGZ",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 5
             }
           },
           {
@@ -88,7 +85,6 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_88RJ",
               "UseBuffer": true,
@@ -112,7 +108,7 @@
             "Wildcard1": {
               "TextId": "__SingleUse_ZEOI",
               "UseBuffer": true,
-              "BufferSize": 10
+              "BufferSize": 5
             }
           },
           {
@@ -175,7 +171,7 @@
             "X": 194,
             "Y": 95,
             "Width": 75,
-            "Height": 49,
+            "Height": 41,
             "TextId": "gndspd",
             "TextRotation": "0",
             "Color": {
@@ -193,10 +189,10 @@
           {
             "Type": "TextArea",
             "Name": "gear",
-            "X": 532,
+            "X": 545,
             "Y": 95,
-            "Width": 50,
-            "Height": 49,
+            "Width": 25,
+            "Height": 41,
             "TextId": "xaccel",
             "TextRotation": "0",
             "Color": {
@@ -217,14 +213,9 @@
             "X": 375,
             "Y": 18,
             "Width": 50,
-            "Height": 49,
+            "Height": 41,
             "TextId": "xaccel",
             "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
             "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_VDUL",
@@ -233,7 +224,19 @@
             }
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "//sample code"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
