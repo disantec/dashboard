@@ -49,7 +49,7 @@ private:
     void handle_removal();
 
     FRESULT sd_mount() { return f_mount(p_sd_fs_, p_sd_path_, 0); }
-    FRESULT sd_mkfs()  { return f_mkfs(p_sd_path_, FM_ANY, 0, read_buffer, sizeof(read_buffer)); } 
+    FRESULT sd_mkfs()  { return f_mkfs(p_sd_path_, FM_FAT32, 0, read_buffer, sizeof(read_buffer)); } 
 };
 
 #endif
