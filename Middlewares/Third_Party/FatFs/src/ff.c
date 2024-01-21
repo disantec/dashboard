@@ -5332,7 +5332,8 @@ FRESULT f_mkfs (
 
 	/* Check physical drive status */
 	stat = disk_initialize(pdrv);
-	if (stat & STA_NOINIT) return FR_NOT_READY;
+	///@todo: Revert
+	if (stat & STA_NOINIT) return 12;//FR_NOT_READY;
 	if (stat & STA_PROTECT) return FR_WRITE_PROTECTED;
 	if (disk_ioctl(pdrv, GET_BLOCK_SIZE, &sz_blk) != RES_OK || !sz_blk || sz_blk > 32768 || (sz_blk & (sz_blk - 1))) sz_blk = 1;	/* Erase block to align data area */
 #if _MAX_SS != _MIN_SS		/* Get sector size of the medium if variable sector size cfg. */
@@ -5361,7 +5362,8 @@ FRESULT f_mkfs (
 		sz_vol = ld_dword(pte + PTE_SizLba);	/* Get volume size */
 	} else {
 		/* Create a single-partition in this function */
-		if (disk_ioctl(pdrv, GET_SECTOR_COUNT, &sz_vol) != RES_OK) return FR_DISK_ERR;
+		///@todo: Revert
+		if (disk_ioctl(pdrv, GET_SECTOR_COUNT, &sz_vol) == RES_NOTRDY) return 7;//FR_DISK_ERR;
 		b_vol = (opt & FM_SFD) ? 0 : 63;		/* Volume start sector */
 		if (sz_vol < b_vol) return FR_MKFS_ABORTED;
 		sz_vol -= b_vol;						/* Volume size */

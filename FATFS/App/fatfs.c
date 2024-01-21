@@ -25,8 +25,6 @@ FIL SDFile;       /* File object for SD */
 
 /* USER CODE BEGIN Variables */
 
-static uint8_t read_buffer[_MAX_SS];
-
 /* USER CODE END Variables */
 
 void MX_FATFS_Init(void)
@@ -35,15 +33,7 @@ void MX_FATFS_Init(void)
   retSD = FATFS_LinkDriver(&SD_Driver, SDPath);
 
   /* USER CODE BEGIN Init */
-  ///@todo Remove once sd test is complete
-  if (FR_OK == retSD)
-  {
-    retSD = f_mount(&SDFatFS, (TCHAR const*)SDPath, 0);
-    if (FR_OK == retSD)
-    {
-      retSD = f_mkfs((TCHAR const*)SDPath, FM_ANY, 0, read_buffer, sizeof(read_buffer));
-    }
-  }
+  
   /* USER CODE END Init */
 }
 
