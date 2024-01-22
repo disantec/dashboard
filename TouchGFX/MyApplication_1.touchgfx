@@ -175,7 +175,7 @@
             "X": 194,
             "Y": 95,
             "Width": 75,
-            "Height": 41,
+            "Height": 49,
             "TextId": "gndspd",
             "TextRotation": "0",
             "Color": {
@@ -196,7 +196,7 @@
             "X": 532,
             "Y": 95,
             "Width": 50,
-            "Height": 41,
+            "Height": 49,
             "TextId": "xaccel",
             "TextRotation": "0",
             "Color": {
@@ -217,7 +217,7 @@
             "X": 375,
             "Y": 18,
             "Width": 50,
-            "Height": 41,
+            "Height": 49,
             "TextId": "xaccel",
             "TextRotation": "0",
             "Color": {

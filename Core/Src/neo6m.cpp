@@ -11,7 +11,8 @@ neo_6m *neo_6m::p_instance_ = nullptr;
 
 void neo_6m::process()
 {
-
- p_data_store_->set_gps(HAL_UART_Receive(&huart6, buffer, 8, 100));
+while (1) {
+ p_data_store_->set_rpm(HAL_UART_Receive_IT(&huart6, buffer, 8));
+}
 
 }
