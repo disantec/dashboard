@@ -67,6 +67,6 @@ void Screen1Presenter::setXACCEL(int val)
 
 void Screen1Presenter::setGPS(int val)
 {
-	view.setGPS (val * .01);
+	view.setGPS (val);
 
 }
