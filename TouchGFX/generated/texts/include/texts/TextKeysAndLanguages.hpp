@@ -12,6 +12,8 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_F6DS,
+    T_GPS,
     T___SINGLEUSE_VDUL,
     T_GNDSPD,
     T___SINGLEUSE_7ZGC,

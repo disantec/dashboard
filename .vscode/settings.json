@@ -2,6 +2,9 @@
     "files.associations": {
         "chrono": "cpp",
         "initializer_list": "c",
-        "data_store.h": "c"
+        "data_store.h": "c",
+        "usart.h": "c",
+        "atomic": "cpp",
+        "cstdint": "cpp"
     }
 }

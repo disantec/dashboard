@@ -2,6 +2,7 @@
 #include "shift_light.h"
 #include "mpu_6050.h"
 #include "sd_logger.h"
+#include "neo6m.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,6 +19,7 @@ void application_main(void *arg)
     shift_light *p_shift_light = shift_light::instance(); ///< Pointer to shift_light instance.
     mpu_6050    *p_mpu_6050   = mpu_6050::instance();     ///< Pointer to mpu_6050 instance.
     sd_logger   *p_sd_logger  = sd_logger::instance();    ///< Pointer to sd_logger instance.
+    neo_6m      *p_neo_6m     = neo_6m::instance();       ///< Pointer to neo_6m instance.
 
     // Begin infinite "main" loop of program. Execution is not intended to move beyond this.
     while (true) 
@@ -26,6 +28,7 @@ void application_main(void *arg)
         p_shift_light->process();
         p_mpu_6050->process();
         p_sd_logger->process();
+        p_neo_6m->process();
 
         // Provide a 1ms sleep to limit the MCU from running as fast as possible. 
         HAL_Delay(1);  

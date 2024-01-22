@@ -41,6 +41,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard gndspd;
     touchgfx::TextAreaWithOneWildcard gear;
     touchgfx::TextAreaWithOneWildcard xaccel;
+    touchgfx::TextAreaWithOneWildcard gps;
 
     /*
      * Wildcard Buffers
@@ -61,6 +62,8 @@ protected:
     touchgfx::Unicode::UnicodeChar gearBuffer[GEAR_SIZE];
     static const uint16_t XACCEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar xaccelBuffer[XACCEL_SIZE];
+    static const uint16_t GPS_SIZE = 5;
+    touchgfx::Unicode::UnicodeChar gpsBuffer[GPS_SIZE];
 
 private:
 

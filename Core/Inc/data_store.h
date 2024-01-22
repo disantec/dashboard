@@ -48,11 +48,23 @@ public:
     void set_xaccel(uint32_t xaccel) { xaccel_ = xaccel; }
     uint32_t get_xaccel() { return xaccel_; }
 
-    void set_yaccel(uint32_t yaccel) { yaccel_ = yaccel; }
-    uint32_t get_yaccel() { return yaccel_; }
+    // void set_yaccel(uint32_t yaccel) { yaccel_ = yaccel; }
+    // uint32_t get_yaccel() { return yaccel_; }
     
-    void set_zaccel(uint32_t zaccel) { zaccel_ = zaccel; }
-    uint32_t get_zaccel() { return zaccel_; }
+    // void set_zaccel(uint32_t zaccel) { zaccel_ = zaccel; }
+    // uint32_t get_zaccel() { return zaccel_; }
+
+    // void set_lat(uint32_t lat) { lat_ = lat; }
+    // uint32_t get_lat() { return lat_; }
+
+    // void set_long(uint32_t long) { long_ = long; }
+    // uint32_t get_long() { return long_; }
+
+    // void set_time(uint32_t time) { time_ = time; }
+    // uint32_t get_time() { return time_; }
+
+    void set_gps(uint32_t gps) { gps_ = gps; }
+    uint32_t get_gps() { return gps_; }
 
 private:
     static data_store *p_instance_;
@@ -67,11 +79,16 @@ private:
     uint16_t map_       = 0;
     uint16_t bap_       = 0;
     uint16_t batt_      = 0;
+  
 
     ///@todo Determine data type
     uint32_t xaccel_    = 0;
-    uint32_t yaccel_    = 0;
-    uint32_t zaccel_    = 0;
+    // uint32_t yaccel_    = 0;
+    // uint32_t zaccel_    = 0;
+    // uint32_t lat_       = 0;
+    // uint32_t long_       = 0;
+    // uint32_t time_       = 0;
+    uint32_t gps_       = 0;
 
     data_store() { /* Default Constructor */ }
 };

@@ -22,4 +22,5 @@ void Model::tick()
     modelListener->setLAMBDA (data_store::instance()->get_lambda());
     modelListener->setBATT (data_store::instance()->get_batt());
     modelListener->setXACCEL (data_store::instance()->get_xaccel());
+    modelListener->setGPS (data_store::instance()->get_gps());
 }

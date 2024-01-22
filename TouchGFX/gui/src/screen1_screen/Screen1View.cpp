@@ -62,3 +62,9 @@ void Screen1View::setXACCEL (int val)
 	Unicode::snprintf(xaccelBuffer, XACCEL_SIZE, "%d", val);
 	xaccel.invalidate();
 }
+
+void Screen1View::setGPS (int val)
+{
+	Unicode::snprintf(gpsBuffer, GPS_SIZE, "%d", val);
+	gps.invalidate();
+}

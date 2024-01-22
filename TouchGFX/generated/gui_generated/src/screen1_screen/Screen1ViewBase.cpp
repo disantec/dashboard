@@ -108,6 +108,14 @@ Screen1ViewBase::Screen1ViewBase()
     xaccel.resizeToCurrentText();
     xaccel.setTypedText(touchgfx::TypedText(T_XACCEL));
     add(xaccel);
+
+    gps.setPosition(26, 18, 288, 24);
+    gps.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    gps.setLinespacing(0);
+    Unicode::snprintf(gpsBuffer, GPS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F6DS).getText());
+    gps.setWildcard(gpsBuffer);
+    gps.setTypedText(touchgfx::TypedText(T_GPS));
+    add(gps);
 }
 
 Screen1ViewBase::~Screen1ViewBase()

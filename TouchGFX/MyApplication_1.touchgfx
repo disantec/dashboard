@@ -175,7 +175,7 @@
             "X": 194,
             "Y": 95,
             "Width": 75,
-            "Height": 49,
+            "Height": 41,
             "TextId": "gndspd",
             "TextRotation": "0",
             "Color": {
@@ -196,7 +196,7 @@
             "X": 532,
             "Y": 95,
             "Width": 50,
-            "Height": 49,
+            "Height": 41,
             "TextId": "xaccel",
             "TextRotation": "0",
             "Color": {
@@ -217,7 +217,7 @@
             "X": 375,
             "Y": 18,
             "Width": 50,
-            "Height": 49,
+            "Height": 41,
             "TextId": "xaccel",
             "TextRotation": "0",
             "Color": {
@@ -230,6 +230,26 @@
               "TextId": "__SingleUse_VDUL",
               "UseBuffer": true,
               "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gps",
+            "X": 26,
+            "Y": 18,
+            "Width": 288,
+            "Height": 24,
+            "TextId": "gps",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_F6DS",
+              "UseBuffer": true,
+              "BufferSize": 5
             }
           }
         ],
